@@ -5,7 +5,7 @@ android {
     buildToolsVersion '26.0.2'
 
     defaultConfig {
-        applicationId "info.androidhive.loginandregistration"
+        applicationId "info.androidhive.bookingApplication"
         minSdkVersion 16
         targetSdkVersion 26
     }

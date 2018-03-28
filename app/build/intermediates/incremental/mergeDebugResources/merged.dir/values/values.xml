@@ -20,7 +20,7 @@
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
     <color name="bg_login">#26ae90</color>
-    <color name="bg_main">#428bca</color>
+    <color name="bg_main">#29a9d2</color>
     <color name="bg_register">#2e3237</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
@@ -686,6 +686,7 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="app_name">Booking Application</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="booking_application">Booking Application</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="btn_link_to_login">Already registred? Login here.</string>
     <string name="btn_link_to_register">Not a member? Sign up now.</string>

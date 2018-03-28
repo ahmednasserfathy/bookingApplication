@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="info.androidhive.loginandregistration.test">
+    package="info.androidhive.bookingApplication.test">
 
     <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="26" />
 
@@ -9,8 +9,8 @@
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="info.androidhive.loginandregistration"
+                     android:targetPackage="info.androidhive.bookingApplication"
                      android:handleProfiling="false"
                      android:functionalTest="false"
-                     android:label="Tests for info.androidhive.loginandregistration"/>
+                     android:label="Tests for info.androidhive.bookingApplication"/>
 </manifest>

@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\66b16e136e6d2975e61d8158d221c61b\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0be8f59765632fabd51d61022563746d\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\e43a29d04ca89aff4216a99a6f98159a\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\6c548ad67f410f149301ba784d15b9f9\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",

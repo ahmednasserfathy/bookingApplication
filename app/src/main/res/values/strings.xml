@@ -13,5 +13,6 @@
     <string name="btn_logout">LOGOUT</string>
     <string name="name">Full name</string>
     <string name="hint_ID">Student ID</string>
+    <string name="booking_application">Booking Application</string>
 
 </resources>
