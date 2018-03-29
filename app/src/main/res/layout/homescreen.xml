@@ -10,7 +10,7 @@
         android:id="@+id/topSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#DDDDDDDD"
+        android:background="@android:color/background_light"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -20,21 +20,20 @@
             android:padding="5dp">
 
             <ImageView
-                android:layout_width="10dp"
-                android:layout_height="88dp"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
                 android:layout_weight="1"
                 android:background="#00000000"
-                android:paddingLeft="10dp"
                 app:srcCompat="@drawable/header" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="87dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif"
                 android:gravity="left|center"
                 android:paddingLeft="5dp"
-                android:text="@string/booking_application"
+                android:text="@string/app_name"
                 android:textColor="#363636"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -47,8 +46,7 @@
         android:layout_height="wrap_content"
         android:background="@color/bg_main"
         android:orientation="vertical"
-        android:paddingBottom="10dp"
-        android:paddingTop="2dp">
+        android:paddingBottom="5dp">
 
         <TextView
             android:id="@+id/textView2"
@@ -56,6 +54,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
             android:paddingLeft="10dp"
+            android:paddingTop="3dp"
             android:text="Start"
             android:textColor="#ffffff"
             android:textSize="26sp" />
@@ -75,7 +74,7 @@
                 app:srcCompat="@drawable/newbooking" />
 
             <ImageButton
-                android:id="@+id/btnShowHistory"
+                android:id="@+id/btnShowResources"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -104,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="Create New Booking"
+                android:text="Create Booking"
                 android:textColor="#ffffff" />
 
             <TextView
@@ -114,7 +113,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="Show Recent Bookings"
+                android:text="Show Resources"
                 android:textColor="#ffffff" />
 
             <TextView
@@ -133,7 +132,7 @@
         android:id="@+id/bottomSection"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#DDDDDDDD"
+        android:background="@android:color/background_light"
         android:orientation="vertical"
         android:paddingBottom="10dp"
         android:paddingLeft="20dp"
@@ -143,7 +142,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="5dp">
 
             <ImageButton
                 android:id="@+id/imageButton7"
@@ -160,7 +160,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:paddingLeft="7dp"
-                android:text="Current Bookings"
+                android:text="Recent Bookings"
                 android:textColor="#363636"
                 android:textSize="20sp" />
 
@@ -170,7 +170,10 @@
             android:id="@+id/currentBookingsList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:divider="#050505"
+            android:dividerHeight="1dp"
+            android:textColor="@android:color/black" />
 
     </LinearLayout>
 

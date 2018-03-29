@@ -1,76 +1,85 @@
 package info.androidhive.bookingApplication.activity;
 
-import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageButton;
+import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Locale;
 
 import info.androidhive.bookingApplication.R;
+import info.androidhive.bookingApplication.helper.Booking;
+import info.androidhive.bookingApplication.helper.ListViewAdapter;
 import info.androidhive.bookingApplication.helper.SQLiteHandler;
 import info.androidhive.bookingApplication.helper.SessionManager;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private final int REQ_CODE_SPEECH_INPUT = 100;
-    private TextView txtName;
-    private TextView txtEmail;
-    private Button btnLogout;
+    private ImageButton btnLogout;
     private SQLiteHandler db;
     private SessionManager session;
-    private TextView voiceInput;
-    private TextView speakButton;
+    private ImageButton btnCreateBooking;
     private String speechText = "";
+    private ListView recentBookingsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        txtName = (TextView) findViewById(R.id.name);
-        txtEmail = (TextView) findViewById(R.id.email);
-        btnLogout = (Button) findViewById(R.id.btnLogout);
-
+        setContentView(R.layout.homescreen);
+        /////////////////////////////////////////////////////////////
+        // Variables initialization
+        /////////////////////////////////////////////////////////////
+        btnLogout = (ImageButton) findViewById(R.id.btnLogout);
+        recentBookingsList = (ListView) findViewById(R.id.currentBookingsList);
+        btnCreateBooking = (ImageButton) findViewById(R.id.btnCreatebooking);
+        /////////////////////////////////////////////////////////////
+        // Database stuff
+        /////////////////////////////////////////////////////////////
         // SqLite database handler
         db = new SQLiteHandler(getApplicationContext());
-
         // session manager
         session = new SessionManager(getApplicationContext());
-
         if (!session.isLoggedIn()) {
             logoutUser();
         }
+        /////////////////////////////////////////////////////////////
+        // Recent Bookings listview logic
+        /////////////////////////////////////////////////////////////
+//        final ArrayList<Recipe> recipeList = Recipe.getRecipesFromFile("recipes.json", this);
+//        String[] listItems = new String[recipeList.size()];
+//        for(int i = 0; i < recipeList.size(); i++){
+//            Recipe recipe = recipeList.get(i);
+//            listItems[i] = recipe.title;
+//        }
 
-        // Fetching user details from SQLite
-        HashMap<String, String> user = db.getUserDetails();
+        final ArrayList<Booking> bookingList = new ArrayList<Booking>();
+        Booking test1 = new Booking("Meeting Room", "12/12/2018", "Upcoming");
+        Booking test2 = new Booking("PC", "5/2/2018", "Expired");
+        bookingList.add(test1);
+        bookingList.add(test2);
+        bookingList.add(test2);
+        bookingList.add(test2);
+        bookingList.add(test2);
 
-        String name = user.get("name");
-        String email = user.get("email");
-
-        // Displaying the user details on the screen
-        txtName.setText(name);
-        txtEmail.setText(email);
-
-        voiceInput = (TextView) findViewById(R.id.voiceInput);
-        speakButton = (TextView) findViewById(R.id.btnSpeak);
-        speakButton.setOnClickListener(new View.OnClickListener() {
+        ListViewAdapter adapter = new ListViewAdapter(this, bookingList);
+        recentBookingsList.setAdapter(adapter);
+        /////////////////////////////////////////////////////////////
+        // ActionListeners
+        /////////////////////////////////////////////////////////////
+        // Create new booking
+        btnCreateBooking.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                //askSpeechInput();
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(intent);
-                finish();
+                askSpeechInput();
             }
         });
-
         // Logout button click event
         btnLogout.setOnClickListener(new View.OnClickListener() {
 
@@ -102,7 +111,7 @@ public class MainActivity extends Activity {
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
-                "Hi speak something");
+                "Which resource and at what time would you like?");
         try {
             startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
         } catch (ActivityNotFoundException a) {
@@ -124,7 +133,6 @@ public class MainActivity extends Activity {
 
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    voiceInput.setText(result.get(0));
                     speechText = result.get(0);
                 }
                 break;
