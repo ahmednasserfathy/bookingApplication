@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogout = (ImageButton) findViewById(R.id.btnLogout);
         recentBookingsList = (ListView) findViewById(R.id.currentBookingsList);
         btnCreateBooking = (ImageButton) findViewById(R.id.btnCreatebooking);
+        ImageButton banShowResources = (ImageButton) findViewById(R.id.banShowResources);
         /////////////////////////////////////////////////////////////
         // Database stuff
         /////////////////////////////////////////////////////////////
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 //            listItems[i] = recipe.title;
 //        }
 
-        final ArrayList<Booking> bookingList = new ArrayList<Booking>();
+        final ArrayList<Booking> bookingList = new ArrayList<>();
         Booking test1 = new Booking("Meeting Room", "12/12/2018", "Upcoming");
         Booking test2 = new Booking("PC", "5/2/2018", "Expired");
         bookingList.add(test1);
@@ -78,6 +79,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 askSpeechInput();
+            }
+        });
+        // Show Resources
+        banShowResources.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ShowResourcesActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
         // Logout button click event

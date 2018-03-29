@@ -92,6 +92,10 @@
         "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0be8f59765632fabd51d61022563746d\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\build\\intermediates\\res\\merged\\debug\\layout_resources.xml.flat",
+        "source": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\src\\main\\res\\layout\\resources.xml"
+    },
+    {
         "merged": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_design_ic_visibility.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\6c548ad67f410f149301ba784d15b9f9\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
     },
@@ -280,12 +284,12 @@
         "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\9d7091eb490dba253fbadb58bde430ca\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
-        "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0be8f59765632fabd51d61022563746d\\res\\drawable-ldrtl-hdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\6c548ad67f410f149301ba784d15b9f9\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0be8f59765632fabd51d61022563746d\\res\\drawable-ldrtl-hdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_holo_light.xml.flat",
@@ -694,6 +698,10 @@
     {
         "merged": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_btn_colored_borderless_text_material.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0be8f59765632fabd51d61022563746d\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\build\\intermediates\\res\\merged\\debug\\layout_resourceview.xml.flat",
+        "source": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\src\\main\\res\\layout\\resourceview.xml"
     },
     {
         "merged": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",

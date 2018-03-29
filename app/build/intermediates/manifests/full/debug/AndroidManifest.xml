@@ -38,6 +38,10 @@
             android:name="info.androidhive.bookingApplication.activity.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop" />
+        <activity
+            android:name="info.androidhive.bookingApplication.activity.ShowResourcesActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop" />
 
         <meta-data
             android:name="android.support.VERSION"
