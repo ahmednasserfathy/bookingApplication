@@ -33,6 +33,11 @@ public class RecentBookingsAdapter extends BaseAdapter {
         return mDataSource.get(position);
     }
 
+    public void clearData() {
+        // clear the data
+        mDataSource.clear();
+    }
+
     @Override
     public long getItemId(int position) {
         return position;
@@ -49,6 +54,10 @@ public class RecentBookingsAdapter extends BaseAdapter {
                 rowView.findViewById(R.id.booking_list_subtitle);
         TextView statusTextView =
                 rowView.findViewById(R.id.booking_list_status);
+        TextView siteLocationTextView =
+                rowView.findViewById(R.id.booking_list_siteLocation);
+        TextView locationTextView =
+                rowView.findViewById(R.id.booking_list_location);
         // Get thumbnail element
         ImageView thumbnailImageView =
                 rowView.findViewById(R.id.booking_list_thumbnail);
@@ -57,23 +66,27 @@ public class RecentBookingsAdapter extends BaseAdapter {
         titleTextView.setText(aBooking.getName());
         subtitleTextView.setText(aBooking.getDateBooked());
         statusTextView.setText("Status: " + aBooking.getStatus());
+        siteLocationTextView.setText(aBooking.getSiteLocation());
+        locationTextView.setText(aBooking.getLocation());
 
-        String imgType = aBooking.getName();
-        if (imgType.startsWith("Room")) {
+        String imgType = aBooking.getName().toLowerCase();
+        if (imgType.startsWith("room")) {
             thumbnailImageView.setImageResource(R.drawable.room);
-        } else if (imgType.startsWith("S-PC")) {
+        } else if (imgType.startsWith("s-pc")) {
             thumbnailImageView.setImageResource(R.drawable.standard);
-        } else if (imgType.startsWith("SP-PC")) {
+        } else if (imgType.startsWith("sp-pc")) {
             thumbnailImageView.setImageResource(R.drawable.special);
-        } else if (imgType.startsWith("Booth")) {
+        } else if (imgType.startsWith("booth")) {
             thumbnailImageView.setImageResource(R.drawable.group);
-        } else if (imgType.startsWith("Scan")) {
+        } else if (imgType.startsWith("scan")) {
             thumbnailImageView.setImageResource(R.drawable.scanner);
         }
 
         titleTextView.setTextColor(Color.BLACK);
         subtitleTextView.setTextColor(Color.BLACK);
         statusTextView.setTextColor(Color.BLACK);
+        locationTextView.setTextColor(Color.BLACK);
+        siteLocationTextView.setTextColor(Color.BLACK);
 
         return rowView;
     }

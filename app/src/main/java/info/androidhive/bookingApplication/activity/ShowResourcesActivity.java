@@ -128,7 +128,7 @@ public class ShowResourcesActivity extends AppCompatActivity implements AdapterV
         // Tag used to cancel the request
         String tag_string_req = "req_getResourcess";
 
-        pDialog.setMessage("Getting layout_resources ...");
+        pDialog.setMessage("Getting resources ...");
         showDialog();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,

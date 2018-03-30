@@ -58,4 +58,35 @@
             android:textSize="16sp"
             tools:text="status" />
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/booking_list_text_layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/booking_list_text_layout"
+        android:layout_toRightOf="@id/booking_list_text_layout">
+
+        <TextView
+            android:id="@+id/booking_list_siteLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            tools:text="site location" />
+
+        <TextView
+            android:id="@+id/booking_list_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/booking_list_siteLocation"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            tools:text="location" />
+    </RelativeLayout>
+
 </RelativeLayout>
