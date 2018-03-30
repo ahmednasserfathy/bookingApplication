@@ -153,14 +153,14 @@ ADDED from C:\Users\PC\Documents\GitHub\bookingApplication\app\src\main\AndroidM
 		ADDED from C:\Users\PC\Documents\GitHub\bookingApplication\app\src\main\AndroidManifest.xml:34:13-52
 	android:name
 		ADDED from C:\Users\PC\Documents\GitHub\bookingApplication\app\src\main\AndroidManifest.xml:31:13-89
-activity#info.androidhive.bookingApplication.activity.MainActivity
+activity#info.androidhive.bookingApplication.activity.HomescreenActivity
 ADDED from C:\Users\PC\Documents\GitHub\bookingApplication\app\src\main\AndroidManifest.xml:35:9-38:46
 	android:label
 		ADDED from C:\Users\PC\Documents\GitHub\bookingApplication\app\src\main\AndroidManifest.xml:37:13-45
 	android:launchMode
 		ADDED from C:\Users\PC\Documents\GitHub\bookingApplication\app\src\main\AndroidManifest.xml:38:13-43
 	android:name
-		ADDED from C:\Users\PC\Documents\GitHub\bookingApplication\app\src\main\AndroidManifest.xml:36:13-85
+		ADDED from C:\Users\PC\Documents\GitHub\bookingApplication\app\src\main\AndroidManifest.xml:36:13-91
 activity#info.androidhive.bookingApplication.activity.ShowResourcesActivity
 ADDED from C:\Users\PC\Documents\GitHub\bookingApplication\app\src\main\AndroidManifest.xml:39:9-42:46
 	android:label

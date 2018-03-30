@@ -14,5 +14,13 @@
     <string name="name">Full name</string>
     <string name="hint_ID">Student ID</string>
     <string name="booking_application">Booking Application</string>
+    <string name="no_resources_found">No resources found</string>
+    <string name="location">Location</string>
+    <string name="find_resources">Find Resources</string>
+    <string name="site_location">Site Location</string>
+    <string name="used_for_site_location">Used for site location</string>
+    <string name="the_actual_location_of_the_resource">The actual location of the resource</string>
+    <string name="resources">Resources</string>
+    <string name="todo">TODO</string>
 
 </resources>

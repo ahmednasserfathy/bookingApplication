@@ -1,14 +1,18 @@
 package info.androidhive.bookingApplication.activity;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -29,10 +33,10 @@ import java.util.Map;
 import info.androidhive.bookingApplication.R;
 import info.androidhive.bookingApplication.app.AppConfig;
 import info.androidhive.bookingApplication.app.AppController;
-import info.androidhive.bookingApplication.helper.ListViewResources;
 import info.androidhive.bookingApplication.helper.Resource;
+import info.androidhive.bookingApplication.helper.ResourcesAdapter;
 
-public class ShowResourcesActivity extends Activity implements AdapterView.OnItemSelectedListener {
+public class ShowResourcesActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private static final String TAG = ShowResourcesActivity.class.getSimpleName();
     private String[] items2 = null;
     private ProgressDialog pDialog;
@@ -44,7 +48,7 @@ public class ShowResourcesActivity extends Activity implements AdapterView.OnIte
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.resources);
+        setContentView(R.layout.layout_resources);
 
         //get the spinner from the xml.
         dropdown = findViewById(R.id.spinner);
@@ -52,6 +56,10 @@ public class ShowResourcesActivity extends Activity implements AdapterView.OnIte
         btnFind = findViewById(R.id.btnFind);
         resourcesList = findViewById(R.id.resourcesList);
         resourcesList.setEmptyView(findViewById(R.id.empty));
+        EditText label1 = findViewById(R.id.label1);
+        EditText label2 = findViewById(R.id.label2);
+        label1.setBackgroundColor(Color.parseColor("#FF29A9D2"));
+        label2.setBackgroundColor(Color.parseColor("#FF29A9D2"));
         newList = new ArrayList<>();
 
         // Progress dialog
@@ -59,15 +67,15 @@ public class ShowResourcesActivity extends Activity implements AdapterView.OnIte
         pDialog.setCancelable(false);
 
         //create a list of items for the spinner.
-        String[] items = new String[]{"Adestts", "Charles Building", "Cantor"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        String[] items = new String[]{"Adsetts", "Charles Building", "Cantor"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
         //set the spinners adapter to the previously created one.
         dropdown.setAdapter(adapter);
         dropdown.setOnItemSelectedListener(this);
         btnFind.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 // Clear the list view
-                ListViewResources sampleAdapter = (ListViewResources) resourcesList.getAdapter();
+                ResourcesAdapter sampleAdapter = (ResourcesAdapter) resourcesList.getAdapter();
                 if (sampleAdapter != null) {
                     sampleAdapter.clearData();
                     sampleAdapter.notifyDataSetChanged();
@@ -84,20 +92,31 @@ public class ShowResourcesActivity extends Activity implements AdapterView.OnIte
         return this;
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Intent intent = new Intent(ShowResourcesActivity.this, HomescreenActivity.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         String text = (String) parent.getSelectedItem();
         switch (text) {
-            case "Adestts":
-                items2 = new String[]{"Level 1", "Level 2", "Level 3", "Level 4", "Level 5"};
+            case "Adsetts":
+                items2 = new String[]{"Level 1", "Level 2", "Level 3", "Level 4"};
                 break;
             case "Charles Building":
                 items2 = new String[]{"Level 1", "Level 2"};
                 break;
             case "Cantor":
-                items2 = new String[]{"Level 1", "Level 2", "Level 3", "Level 4"};
+                items2 = new String[]{"Level 1", "Level 2", "Level 3"};
                 break;
         }
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items2);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items2);
         //set the spinners adapter to the previously created one.
         dropdown2.setAdapter(adapter2);
     }
@@ -109,7 +128,7 @@ public class ShowResourcesActivity extends Activity implements AdapterView.OnIte
         // Tag used to cancel the request
         String tag_string_req = "req_getResourcess";
 
-        pDialog.setMessage("Getting resources ...");
+        pDialog.setMessage("Getting layout_resources ...");
         showDialog();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
@@ -137,7 +156,7 @@ public class ShowResourcesActivity extends Activity implements AdapterView.OnIte
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        ListViewResources viewAdapter = new ListViewResources(getContext(), newList);
+                        ResourcesAdapter viewAdapter = new ResourcesAdapter(getContext(), newList);
                         resourcesList.setAdapter(viewAdapter);
                     } else {
 
@@ -147,9 +166,11 @@ public class ShowResourcesActivity extends Activity implements AdapterView.OnIte
                         Toast.makeText(getApplicationContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
                         // Clear the list view
-                        ListViewResources sampleAdapter = (ListViewResources) resourcesList.getAdapter();
-                        sampleAdapter.clearData();
-                        sampleAdapter.notifyDataSetChanged();
+                        ResourcesAdapter sampleAdapter = (ResourcesAdapter) resourcesList.getAdapter();
+                        if (sampleAdapter != null) {
+                            sampleAdapter.clearData();
+                            sampleAdapter.notifyDataSetChanged();
+                        }
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
