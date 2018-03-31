@@ -29,7 +29,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import java.util.StringTokenizer;
 
 import info.androidhive.bookingApplication.R;
 import info.androidhive.bookingApplication.app.AppConfig;
@@ -38,6 +37,9 @@ import info.androidhive.bookingApplication.helper.Booking;
 import info.androidhive.bookingApplication.helper.RecentBookingsAdapter;
 import info.androidhive.bookingApplication.helper.SQLiteHandler;
 import info.androidhive.bookingApplication.helper.SessionManager;
+
+import static info.androidhive.bookingApplication.helper.SpeechPatterns.reserveRoom;
+import static info.androidhive.bookingApplication.helper.SpeechPatterns.reserveRoomAtCharles;
 
 public class HomescreenActivity extends AppCompatActivity {
 
@@ -82,21 +84,6 @@ public class HomescreenActivity extends AppCompatActivity {
         }
 
         bookingList = new ArrayList<>();
-//        Booking test1 = new Booking("Room 1", "12/12/2018", "Upcoming");
-//        Booking test2 = new Booking("SP-PC 4", "5/2/2018", "Expired");
-//        Booking test3 = new Booking("SP-PC 3", "5/2/2018", "Expired");
-//        Booking test4 = new Booking("Booth-76", "5/2/2018", "Expired");
-//        Booking test5 = new Booking("S-PC 1", "5/2/2018", "Expired");
-//        Booking test6 = new Booking("Scan 1", "5/2/2018", "Expired");
-//        bookingList.add(test1);
-//        bookingList.add(test2);
-//        bookingList.add(test2);
-//        bookingList.add(test2);
-//        bookingList.add(test2);
-//        bookingList.add(test3);
-//        bookingList.add(test4);
-//        bookingList.add(test5);
-//        bookingList.add(test6);
 
         RecentBookingsAdapter adapter = new RecentBookingsAdapter(this, bookingList);
         recentBookingsList.setAdapter(adapter);
@@ -158,10 +145,6 @@ public class HomescreenActivity extends AppCompatActivity {
         }
     }
 
-    public String getSpeechText() {
-        return speechText;
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -170,85 +153,43 @@ public class HomescreenActivity extends AppCompatActivity {
             case REQ_CODE_SPEECH_INPUT: {
                 if (resultCode == RESULT_OK && null != data) {
 
-                    ArrayList<String> result = data
-                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    speechText = result.get(0);
+//                    ArrayList<String> result = data
+//                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+//                    speechText = result.get(0);
+                    speechText = "reserve Room 1.1 on the 1st of April at 12:30 a.m. in charles building level 1";
                     Log.d(TAG, "Speech input: " + speechText);
 
-                    if (speechText.startsWith("reserve") || speechText.startsWith("Reserve")) {
-                        if (speechText.contains("Room") || speechText.contains("room")) {
 
-                            //                           "reserve room 4.1 on the 5th of April 2018 at 10:30 a.m. in adsetts level 4"
+                    // Get number of words in the command
+                    speechText = speechText.toLowerCase();
+                    String trim = speechText.trim();
+                    int numOfWords = trim.split("\\s+").length;
 
-                            String method = "";
-                            String name = "";
-                            Double roomNum = 0.0;
-                            String onWord = "";
-                            String theWord = "";
-                            String day = "";
-                            String ofWord = "";
-                            String month = "";
-                            String atWord = "";
-                            String hourAndMins = "";
-                            String amOrPM = "";
-                            String year = "";
-                            String inWord = "";
-                            String rSiteLocation = "";
-                            String location = "";
-                            String locNum = "";
-                            StringTokenizer stringTokenizer = new StringTokenizer(speechText);
+                    // Create a new booking
+                    if (speechText.startsWith("reserve")) {
 
-                            method = stringTokenizer.nextElement().toString();
-                            name = stringTokenizer.nextElement().toString();
-                            roomNum = Double.parseDouble(stringTokenizer.nextElement().toString());
-                            onWord = stringTokenizer.nextElement().toString();
-                            theWord = stringTokenizer.nextElement().toString();
-                            day = stringTokenizer.nextElement().toString();
-                            ofWord = stringTokenizer.nextElement().toString();
-                            month = stringTokenizer.nextElement().toString();
-                            year = stringTokenizer.nextElement().toString();
-                            atWord = stringTokenizer.nextElement().toString();
-                            hourAndMins = stringTokenizer.nextElement().toString();
-                            amOrPM = stringTokenizer.nextElement().toString();
-                            inWord = stringTokenizer.nextElement().toString();
-                            rSiteLocation = stringTokenizer.nextElement().toString();
-                            location = stringTokenizer.nextElement().toString();
-                            locNum = stringTokenizer.nextElement().toString();
+                        if (numOfWords == 15 || numOfWords == 16) {
 
-                            String rName = name + "-" + roomNum;
-                            String rDateBooked = day + " " + month + " " + year;
-                            String rLocation = location + " " + locNum;
-
-                            capitalizeFirstLetter(rName);
-                            capitalizeFirstLetter(rLocation);
-
-
-//                        String[] arr = speechText.split(" ");
-//                        for ( String word : arr) {
-//                            if(word.startsWith("Room")){
-//                                bookingName = word;
-//                            }
-//                            else if(){
-//
-//                            }
-//                        }
-//                        Date
-
-                            createNewBooking(rName, rDateBooked, "Adsetts", "Level 4");
+                            String[] params = null;
+                            // If its a meeting room at Library or Owen
+                            if (speechText.contains("room") && numOfWords == 15) {
+                                params = reserveRoom(speechText);
+                            }
+                            // If its a meeting room at Charles building
+                            else if (speechText.contains("room") && numOfWords == 16) {
+                                params = reserveRoomAtCharles(speechText);
+                            }
+                            if (params != null)
+                                createNewBooking(params[0], params[1], params[2], params[3]);
+                            else
+                                Toast.makeText(getApplicationContext(),
+                                        "Invalid command!", Toast.LENGTH_LONG).show();
                         }
                     }
                 }
                 break;
             }
-
         }
-    }
-
-    public String capitalizeFirstLetter(String original) {
-        if (original == null || original.length() == 0) {
-            return original;
-        }
-        return original.substring(0, 1).toUpperCase() + original.substring(1);
     }
 
     private void createNewBooking(final String rName, final String rDateBooked, final String rSiteLocation
@@ -256,7 +197,8 @@ public class HomescreenActivity extends AppCompatActivity {
         // Tag used to cancel the request
         String tag_string_req = "req_createbooking";
 
-        pDialog.setMessage("Booking new resource");
+        // Progress box
+        pDialog.setMessage("Checking resource");
         showDialog();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,

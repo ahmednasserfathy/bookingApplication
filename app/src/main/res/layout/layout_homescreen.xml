@@ -24,6 +24,7 @@
                 android:layout_height="54dp"
                 android:layout_weight="1"
                 android:background="#00000000"
+                android:contentDescription="@string/this_is_the_app_icon"
                 app:srcCompat="@drawable/header" />
 
             <TextView
@@ -46,7 +47,7 @@
 
             <TextView
                 android:id="@+id/timeView"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_horizontal|center"
@@ -71,7 +72,7 @@
             android:paddingBottom="5dp"
             android:paddingLeft="10dp"
             android:paddingTop="3dp"
-            android:text="Start"
+            android:text="@string/start"
             android:textColor="#ffffff"
             android:textSize="26sp" />
 
@@ -87,6 +88,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#00000000"
+                android:contentDescription="TODO"
                 app:srcCompat="@drawable/newbooking" />
 
             <ImageButton
@@ -95,6 +97,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#00000000"
+                android:contentDescription="TODO"
                 app:srcCompat="@drawable/history" />
 
             <ImageButton
@@ -103,6 +106,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#00000000"
+                android:contentDescription="TODO"
                 app:srcCompat="@drawable/logout" />
         </LinearLayout>
 
@@ -119,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="Create Booking"
+                android:text="@string/create_booking"
                 android:textColor="#ffffff" />
 
             <TextView
@@ -129,7 +133,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="Show Resources"
+                android:text="@string/show_resources"
                 android:textColor="#ffffff" />
 
             <TextView
@@ -138,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="Logout"
+                android:text="@string/logout"
                 android:textColor="#ffffff" />
         </LinearLayout>
 
@@ -167,6 +171,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="#00000000"
+                android:contentDescription="TODO"
                 app:srcCompat="@drawable/info" />
 
             <TextView
@@ -176,7 +181,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:paddingLeft="7dp"
-                android:text="Recent Bookings"
+                android:text="@string/recent_bookings"
                 android:textColor="#363636"
                 android:textSize="20sp" />
 
@@ -197,7 +202,7 @@
                 android:fontFamily="casual"
                 android:gravity="center_horizontal"
                 android:paddingTop="30dp"
-                android:text="There are no bookings"
+                android:text="@string/there_are_no_bookings"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/black" />
 

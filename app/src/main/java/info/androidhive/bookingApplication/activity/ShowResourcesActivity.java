@@ -67,7 +67,7 @@ public class ShowResourcesActivity extends AppCompatActivity implements AdapterV
         pDialog.setCancelable(false);
 
         //create a list of items for the spinner.
-        String[] items = new String[]{"Adsetts", "Charles Building", "Cantor"};
+        String[] items = new String[]{"Library", "Charles Building", "Owen"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
         //set the spinners adapter to the previously created one.
         dropdown.setAdapter(adapter);
@@ -106,13 +106,13 @@ public class ShowResourcesActivity extends AppCompatActivity implements AdapterV
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         String text = (String) parent.getSelectedItem();
         switch (text) {
-            case "Adsetts":
+            case "Library":
                 items2 = new String[]{"Level 1", "Level 2", "Level 3", "Level 4"};
                 break;
             case "Charles Building":
                 items2 = new String[]{"Level 1", "Level 2"};
                 break;
-            case "Cantor":
+            case "Owen":
                 items2 = new String[]{"Level 1", "Level 2", "Level 3"};
                 break;
         }

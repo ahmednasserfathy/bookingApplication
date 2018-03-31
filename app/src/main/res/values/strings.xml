@@ -22,5 +22,12 @@
     <string name="the_actual_location_of_the_resource">The actual location of the resource</string>
     <string name="resources">Resources</string>
     <string name="todo">TODO</string>
+    <string name="this_is_the_app_icon">This is the app icon</string>
+    <string name="start">Start</string>
+    <string name="create_booking">Create Booking</string>
+    <string name="show_resources">Show Resources</string>
+    <string name="there_are_no_bookings">There are no bookings</string>
+    <string name="recent_bookings">Recent Bookings</string>
+    <string name="logout">Logout</string>
 
 </resources>
