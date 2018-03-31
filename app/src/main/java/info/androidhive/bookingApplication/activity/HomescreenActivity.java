@@ -38,6 +38,8 @@ import info.androidhive.bookingApplication.helper.RecentBookingsAdapter;
 import info.androidhive.bookingApplication.helper.SQLiteHandler;
 import info.androidhive.bookingApplication.helper.SessionManager;
 
+import static info.androidhive.bookingApplication.helper.SpeechPatterns.reservePC;
+import static info.androidhive.bookingApplication.helper.SpeechPatterns.reservePCAtCharles;
 import static info.androidhive.bookingApplication.helper.SpeechPatterns.reserveRoom;
 import static info.androidhive.bookingApplication.helper.SpeechPatterns.reserveRoomAtCharles;
 
@@ -137,7 +139,7 @@ public class HomescreenActivity extends AppCompatActivity {
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
-                "Which resource and at what time would you like?");
+                "What would you like to do?");
         try {
             startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
         } catch (ActivityNotFoundException a) {
@@ -153,10 +155,9 @@ public class HomescreenActivity extends AppCompatActivity {
             case REQ_CODE_SPEECH_INPUT: {
                 if (resultCode == RESULT_OK && null != data) {
 
-//                    ArrayList<String> result = data
-//                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-//                    speechText = result.get(0);
-                    speechText = "reserve Room 1.1 on the 1st of April at 12:30 a.m. in charles building level 1";
+                    ArrayList<String> result = data
+                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    speechText = result.get(0);
                     Log.d(TAG, "Speech input: " + speechText);
 
 
@@ -168,23 +169,29 @@ public class HomescreenActivity extends AppCompatActivity {
                     // Create a new booking
                     if (speechText.startsWith("reserve")) {
 
-                        if (numOfWords == 15 || numOfWords == 16) {
+                        String[] params = null;
+                        if (numOfWords == 15 || numOfWords == 16 || numOfWords == 17) {
 
-                            String[] params = null;
-                            // If its a meeting room at Library or Owen
-                            if (speechText.contains("room") && numOfWords == 15) {
-                                params = reserveRoom(speechText);
+                            // If its a meeting room/group booth
+                            if (speechText.contains("room") || speechText.contains("booth")
+                                    || speechText.contains("scan")) {
+                                if (numOfWords == 15)
+                                    params = reserveRoom(speechText);
+                                else
+                                    params = reserveRoomAtCharles(speechText);
+                            } else if (speechText.contains("pc")) {
+                                if (numOfWords == 16)
+                                    params = reservePC(speechText);
+                                else
+                                    params = reservePCAtCharles(speechText);
                             }
-                            // If its a meeting room at Charles building
-                            else if (speechText.contains("room") && numOfWords == 16) {
-                                params = reserveRoomAtCharles(speechText);
-                            }
-                            if (params != null)
-                                createNewBooking(params[0], params[1], params[2], params[3]);
-                            else
-                                Toast.makeText(getApplicationContext(),
-                                        "Invalid command!", Toast.LENGTH_LONG).show();
                         }
+
+                        if (params != null)
+                            createNewBooking(params[0], params[1], params[2], params[3]);
+                        else
+                            Toast.makeText(getApplicationContext(),
+                                    "Invalid command!", Toast.LENGTH_LONG).show();
                     }
                 }
                 break;
