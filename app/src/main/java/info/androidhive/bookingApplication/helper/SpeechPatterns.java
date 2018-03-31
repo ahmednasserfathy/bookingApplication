@@ -10,7 +10,7 @@ public class SpeechPatterns {
         //"reserve room 1 on the 1st of April at 12:30 a.m. in Library level 1"
 
         StringTokenizer stringTokenizer = new StringTokenizer(speechText);
-        String name, day, month, hourAndMins, amOrPM,
+        String name, day, month, hourAndMins, time,
                 rSiteLocation, location, locNum, nameNum;
         String rName, rDateBooked, rLocation;
 
@@ -25,7 +25,7 @@ public class SpeechPatterns {
         month = stringTokenizer.nextElement().toString();
         stringTokenizer.nextElement().toString();
         hourAndMins = stringTokenizer.nextElement().toString();
-        amOrPM = stringTokenizer.nextElement().toString();
+        time = stringTokenizer.nextElement().toString();
         stringTokenizer.nextElement().toString();
         rSiteLocation = stringTokenizer.nextElement().toString();
         location = stringTokenizer.nextElement().toString();
@@ -43,8 +43,14 @@ public class SpeechPatterns {
 
         // Combine words before sending to database
         rName = name + "-" + nameNum;
-        rDateBooked = day + " " + month;
         rLocation = location + " " + locNum;
+
+        time = time.replace(".", "");
+        time = time.toUpperCase();
+        month = capitalizeFirstLetter(month);
+
+        // 10:30 AM 14th, March
+        rDateBooked = hourAndMins + " " + time + " " + day + ", " + month;
 
         rName = capitalizeFirstLetter(rName);
         rSiteLocation = capitalizeFirstLetter(rSiteLocation);
@@ -57,7 +63,7 @@ public class SpeechPatterns {
         //"reserve room 1.1 on the 3rd of December at 3:31 p.m. in Charles building level 1"
 
         StringTokenizer stringTokenizer = new StringTokenizer(speechText);
-        String name, day, month, hourAndMins, amOrPM,
+        String name, day, month, hourAndMins, time,
                 rSiteLocation, location, locNum, nameNum;
         String rName, rDateBooked, rLocation;
 
@@ -72,7 +78,7 @@ public class SpeechPatterns {
         month = stringTokenizer.nextElement().toString();
         stringTokenizer.nextElement().toString();
         hourAndMins = stringTokenizer.nextElement().toString();
-        amOrPM = stringTokenizer.nextElement().toString();
+        time = stringTokenizer.nextElement().toString();
         stringTokenizer.nextElement().toString();
         rSiteLocation = stringTokenizer.nextElement().toString() + " "
                 + stringTokenizer.nextElement().toString();
@@ -91,8 +97,14 @@ public class SpeechPatterns {
 
         // Combine words before sending to database
         rName = name + "-" + nameNum;
-        rDateBooked = day + " " + month;
         rLocation = location + " " + locNum;
+
+        time = time.replace(".", "");
+        time = time.toUpperCase();
+        month = capitalizeFirstLetter(month);
+
+        // 10:30 AM 14th, March
+        rDateBooked = hourAndMins + " " + time + " " + day + ", " + month;
 
         rName = capitalizeFirstLetter(rName);
         rSiteLocation = capitalizeFirstLetter(rSiteLocation);
@@ -105,7 +117,7 @@ public class SpeechPatterns {
         //"reserve standard PC 424 on the 1st of April at 12:30 a.m. in Library level 1"
 
         StringTokenizer stringTokenizer = new StringTokenizer(speechText);
-        String name, day, month, hourAndMins, amOrPM,
+        String name, day, month, hourAndMins, time,
                 rSiteLocation, location, locNum, nameNum;
         String rName, rDateBooked, rLocation;
 
@@ -121,7 +133,7 @@ public class SpeechPatterns {
         month = stringTokenizer.nextElement().toString();
         stringTokenizer.nextElement().toString();
         hourAndMins = stringTokenizer.nextElement().toString();
-        amOrPM = stringTokenizer.nextElement().toString();
+        time = stringTokenizer.nextElement().toString();
         stringTokenizer.nextElement().toString();
         rSiteLocation = stringTokenizer.nextElement().toString();
         location = stringTokenizer.nextElement().toString();
@@ -143,8 +155,15 @@ public class SpeechPatterns {
         } else {
             rName = "SP-PC" + nameNum;
         }
-        rDateBooked = day + " " + month;
+        // Combine words before sending to database
         rLocation = location + " " + locNum;
+
+        time = time.replace(".", "");
+        time = time.toUpperCase();
+        month = capitalizeFirstLetter(month);
+
+        // 10:30 AM 14th, March
+        rDateBooked = hourAndMins + " " + time + " " + day + ", " + month;
 
         rSiteLocation = capitalizeFirstLetter(rSiteLocation);
         rLocation = capitalizeFirstLetter(rLocation);
@@ -156,7 +175,7 @@ public class SpeechPatterns {
         //"reserve standard PC 424 on the 1st of April at 12:30 a.m. in Library level 1"
 
         StringTokenizer stringTokenizer = new StringTokenizer(speechText);
-        String name, day, month, hourAndMins, amOrPM,
+        String name, day, month, hourAndMins, time,
                 rSiteLocation, location, locNum, nameNum;
         String rName, rDateBooked, rLocation;
 
@@ -172,7 +191,7 @@ public class SpeechPatterns {
         month = stringTokenizer.nextElement().toString();
         stringTokenizer.nextElement().toString();
         hourAndMins = stringTokenizer.nextElement().toString();
-        amOrPM = stringTokenizer.nextElement().toString();
+        time = stringTokenizer.nextElement().toString();
         stringTokenizer.nextElement().toString();
         rSiteLocation = stringTokenizer.nextElement().toString() + " "
                 + stringTokenizer.nextElement().toString();
@@ -195,8 +214,15 @@ public class SpeechPatterns {
         } else {
             rName = "SP-PC" + nameNum;
         }
-        rDateBooked = day + " " + month;
+        // Combine words before sending to database
         rLocation = location + " " + locNum;
+
+        time = time.replace(".", "");
+        time = time.toUpperCase();
+        month = capitalizeFirstLetter(month);
+
+        // 10:30 AM 14th, March
+        rDateBooked = hourAndMins + " " + time + " " + day + ", " + month;
 
         rSiteLocation = capitalizeFirstLetter(rSiteLocation);
         rLocation = capitalizeFirstLetter(rLocation);
@@ -204,7 +230,7 @@ public class SpeechPatterns {
         return new String[]{rName, rDateBooked, rSiteLocation, rLocation};
     }
 
-    public static String capitalizeFirstLetter(String original) {
+    private static String capitalizeFirstLetter(String original) {
         if (original == null || original.length() == 0) {
             return original;
         }

@@ -23,6 +23,10 @@
             android:ems="10"
             android:hint="@string/used_for_site_location"
             android:text="@string/site_location"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:textStyle="italic" />
     </LinearLayout>
 
@@ -56,6 +60,10 @@
             android:layout_weight="1"
             android:backgroundTint="@android:color/transparent"
             android:ems="10"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:hint="@string/the_actual_location_of_the_resource"
             android:text="@string/location"
             android:textStyle="italic" />

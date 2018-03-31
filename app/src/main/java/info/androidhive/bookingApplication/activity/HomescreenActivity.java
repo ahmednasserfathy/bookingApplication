@@ -55,6 +55,7 @@ public class HomescreenActivity extends AppCompatActivity {
     private ListView recentBookingsList;
     private ProgressDialog pDialog;
     private ArrayList<Booking> bookingList;
+    private String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +80,9 @@ public class HomescreenActivity extends AppCompatActivity {
 
         // SqLite database handler
         db = new SQLiteHandler(getApplicationContext());
+        // Fetching user details from SQLite
+        HashMap<String, String> user = db.getUserDetails();
+        userID = user.get("uid");
         // session manager
         session = new SessionManager(getApplicationContext());
         if (!session.isLoggedIn()) {
@@ -86,6 +90,7 @@ public class HomescreenActivity extends AppCompatActivity {
         }
 
         bookingList = new ArrayList<>();
+        getAllBookings(userID);
 
         RecentBookingsAdapter adapter = new RecentBookingsAdapter(this, bookingList);
         recentBookingsList.setAdapter(adapter);
@@ -155,9 +160,9 @@ public class HomescreenActivity extends AppCompatActivity {
             case REQ_CODE_SPEECH_INPUT: {
                 if (resultCode == RESULT_OK && null != data) {
 
-                    ArrayList<String> result = data
-                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    speechText = result.get(0);
+//                    ArrayList<String> result = data
+//                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    speechText = "reserve Booth 1.23 on the 2nd of march at 9:34 a.m. in owen level 1";
                     Log.d(TAG, "Speech input: " + speechText);
 
 
@@ -177,12 +182,12 @@ public class HomescreenActivity extends AppCompatActivity {
                                     || speechText.contains("scan")) {
                                 if (numOfWords == 15)
                                     params = reserveRoom(speechText);
-                                else
+                                else if (numOfWords == 16)
                                     params = reserveRoomAtCharles(speechText);
                             } else if (speechText.contains("pc")) {
                                 if (numOfWords == 16)
                                     params = reservePC(speechText);
-                                else
+                                else if (numOfWords == 17)
                                     params = reservePCAtCharles(speechText);
                             }
                         }
@@ -231,21 +236,15 @@ public class HomescreenActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        RecentBookingsAdapter adapter = new RecentBookingsAdapter(getContext(), bookingList);
-                        recentBookingsList.setAdapter(adapter);
                     } else {
                         // Error occurred in database. Get the error
                         // message
                         String errorMsg = jObj.getString("error_msg");
                         Toast.makeText(getApplicationContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
-                        // Clear the list view
-                        RecentBookingsAdapter sampleAdapter = (RecentBookingsAdapter) recentBookingsList.getAdapter();
-                        if (sampleAdapter != null) {
-                            sampleAdapter.clearData();
-                            sampleAdapter.notifyDataSetChanged();
-                        }
                     }
+                    RecentBookingsAdapter adapter = new RecentBookingsAdapter(getContext(), bookingList);
+                    recentBookingsList.setAdapter(adapter);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -266,6 +265,7 @@ public class HomescreenActivity extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 // Posting params to createbooking url
                 Map<String, String> params = new HashMap<String, String>();
+                params.put("userID", userID);
                 params.put("name", rName);
                 params.put("dateBooked", rDateBooked);
                 params.put("siteLocation", rSiteLocation);
@@ -275,6 +275,69 @@ public class HomescreenActivity extends AppCompatActivity {
 
         };
 
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+    }
+
+    private void getAllBookings(final String userID) {
+        // Tag used to cancel the request
+        String tag_string_req = "req_getBookings";
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                AppConfig.URL_GET_BOOKINGS, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, "GET BOOKINGS Response: " + response.toString());
+                hideDialog();
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    boolean error = jObj.getBoolean("error");
+
+                    if (!error) {
+                        try {
+                            JSONArray data = jObj.getJSONArray("theData");
+                            for (int i = 0; i < data.length(); i++) {
+                                try {
+                                    bookingList.add(new Booking((JSONObject) data.get(i)));
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        RecentBookingsAdapter viewAdapter = new RecentBookingsAdapter(getContext(), bookingList);
+                        recentBookingsList.setAdapter(viewAdapter);
+                    } else {
+                        // Clear the list view
+                        RecentBookingsAdapter sampleAdapter = (RecentBookingsAdapter) recentBookingsList.getAdapter();
+                        if (sampleAdapter != null) {
+                            sampleAdapter.clearData();
+                            sampleAdapter.notifyDataSetChanged();
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "Get bookings error: " + error.getMessage());
+                hideDialog();
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting params to getbookings url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("userID", userID);
+                return params;
+            }
+        };
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
