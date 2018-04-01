@@ -45,4 +45,8 @@ public class Booking {
         return status;
     }
 
+    public void setStatus(String newStatus) {
+        status = newStatus;
+    }
+
 }

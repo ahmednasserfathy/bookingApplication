@@ -1,12 +1,16 @@
 package info.androidhive.bookingApplication.activity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
+import android.text.format.DateFormat;
+import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -23,17 +27,21 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 import info.androidhive.bookingApplication.R;
 import info.androidhive.bookingApplication.app.AppConfig;
 import info.androidhive.bookingApplication.app.AppController;
 import info.androidhive.bookingApplication.helper.Booking;
+import info.androidhive.bookingApplication.helper.Clock;
+import info.androidhive.bookingApplication.helper.OnClockTickListner;
 import info.androidhive.bookingApplication.helper.RecentBookingsAdapter;
 import info.androidhive.bookingApplication.helper.SQLiteHandler;
 import info.androidhive.bookingApplication.helper.SessionManager;
@@ -56,6 +64,7 @@ public class HomescreenActivity extends AppCompatActivity {
     private ProgressDialog pDialog;
     private ArrayList<Booking> bookingList;
     private String userID;
+    private Clock c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +81,68 @@ public class HomescreenActivity extends AppCompatActivity {
         // Progress dialog
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
+
+        c = new Clock(this);
+        c.AddClockTickListner(new OnClockTickListner() {
+            @Override
+            public void OnMinuteTick(Time currentTime) {
+
+                for (Booking booking : bookingList) {
+                    if (booking.getStatus().equals("Upcoming")) {
+
+                        StringTokenizer stringTokenizer = new StringTokenizer(booking.getDateBooked());
+                        String day, month, hourAndMins;
+
+                        // Separate each word
+                        hourAndMins = stringTokenizer.nextElement().toString() + " "
+                                + stringTokenizer.nextElement().toString();
+                        day = stringTokenizer.nextElement().toString();
+                        month = stringTokenizer.nextElement().toString();
+                        day = day.replace(",", "");
+
+                        if (hourAndMins.equals(DateFormat.format("h:mm aa"
+                                , currentTime.toMillis(true)).toString())) {
+
+                            Format formatter = new SimpleDateFormat("MMMM");
+                            String currentMonth = formatter.format(new Date());
+
+                            if (month.equals(currentMonth)) {
+
+                                if (day.contains("st")) {
+                                    day = day.replace("st", "");
+                                } else if (day.contains("nd")) {
+                                    day = day.replace("nd", "");
+                                } else if (day.contains("rd")) {
+                                    day = day.replace("rd", "");
+                                } else if (day.contains("th")) {
+                                    day = day.replace("th", "");
+                                }
+
+                                Format formatter2 = new SimpleDateFormat("d");
+                                String currentDay = formatter2.format(new Date());
+
+                                if (day.equals(currentDay)) {
+                                    booking.setStatus("In progress");
+                                    new AlertDialog.Builder(getContext())
+                                            .setTitle("Booking initiated!")
+                                            .setMessage("Your booking: " + booking.getName() + " at "
+                                                    + booking.getSiteLocation() + ", "
+                                                    + booking.getLocation() + " has started")
+                                            .setIcon(android.R.drawable.ic_dialog_alert)
+                                            .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                                                public void onClick(DialogInterface dialog, int whichButton) {
+                                                    RecentBookingsAdapter adapter = new RecentBookingsAdapter(getContext(), bookingList);
+                                                    recentBookingsList.setAdapter(adapter);
+                                                }
+                                            }).show();
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        });
 
         Date d = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
@@ -108,6 +179,7 @@ public class HomescreenActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                c.StopTick();
                 Intent intent = new Intent(HomescreenActivity.this, ShowResourcesActivity.class);
                 startActivity(intent);
                 finish();
@@ -133,6 +205,7 @@ public class HomescreenActivity extends AppCompatActivity {
         db.deleteUsers();
 
         // Launching the login activity
+        c.StopTick();
         Intent intent = new Intent(HomescreenActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
@@ -162,7 +235,7 @@ public class HomescreenActivity extends AppCompatActivity {
 
 //                    ArrayList<String> result = data
 //                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    speechText = "reserve Booth 1.23 on the 2nd of march at 9:34 a.m. in owen level 1";
+                    speechText = "reserve room 4 on the 1st of april at 2:59 a.m. in Library level 1";
                     Log.d(TAG, "Speech input: " + speechText);
 
 

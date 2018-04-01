@@ -17,6 +17,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="973b72fe-f855-471f-a5a6-c166a625a535" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Clock.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/OnClockTickListner.java" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
@@ -26,9 +28,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$2.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$3.class" />
@@ -36,23 +35,11 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$5.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$6.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/app/AppConfig.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/app/AppConfig.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/helper/SQLiteHandler.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/helper/SQLiteHandler.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/helper/Booking.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/helper/Booking.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/debug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/debug/dex-renamer-state.txt" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/debug/zip-cache/UZ8Q3Tc_Fuf9bAtyBvBhKHn1HdI=" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/debug/zip-cache/UZ8Q3Tc_Fuf9bAtyBvBhKHn1HdI=" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_layout_resources.xml.flat" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_layout_resources.xml.flat" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/__content__.json" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/__content__.json" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/externalLibsDexMerger/debug/0/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/externalLibsDexMerger/debug/0/classes.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppConfig.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppConfig.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/SQLiteHandler.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/SQLiteHandler.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/SpeechPatterns.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/SpeechPatterns.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_resources.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_resources.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Booking.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Booking.java" />
     </list>
     <ignored path="AndroidLoginAndRegistration.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,18 +83,42 @@
       <file leaf-file-name="HomescreenActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="153" column="0" lean-forward="true" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+            <state relative-caret-position="290">
+              <caret line="280" column="30" lean-forward="false" selection-start-line="280" selection-start-column="30" selection-end-line="280" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#onCreate#0;class#HomescreenActivity#0" expanded="false" />
+                <element signature="e#3282#6530#0" expanded="true" />
+                <element signature="e#5890#6366#0" expanded="true" />
+                <element signature="e#6365#6366#0" expanded="true" />
+                <element signature="e#6529#6530#0" expanded="true" />
+                <element signature="e#7409#7560#0" expanded="true" />
+                <element signature="e#7559#7560#0" expanded="true" />
+                <element signature="e#7633#7943#0" expanded="true" />
+                <element signature="e#7942#7943#0" expanded="true" />
+                <element signature="e#8020#8167#0" expanded="true" />
+                <element signature="e#8166#8167#0" expanded="true" />
                 <element signature="method#logoutUser#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="method#askSpeechInput#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="method#onActivityResult#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="method#createNewBooking#0;class#HomescreenActivity#0" expanded="false" />
-                <element signature="e#10406#10422#0" expanded="true" />
+                <element signature="e#14119#14135#0" expanded="true" />
                 <element signature="method#getAllBookings#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="method#showDialog#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="method#hideDialog#0;class#HomescreenActivity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Booking.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Booking.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding>
+                <element signature="e#1201#1202#0" expanded="true" />
+                <element signature="e#1235#1236#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,12 +132,12 @@
         <option value="valueResourceFile" />
         <option value="layoutResourceFile_vertical" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>resourcesList</find>
       <find>empty</find>
       <find>TAG</find>
       <find>showDialog</find>
@@ -156,6 +167,7 @@
       <find>getAutoSizeMinTextSize</find>
       <find>getApplicationContext</find>
       <find>hourAndMins</find>
+      <find>intent</find>
     </findStrings>
     <replaceStrings>
       <replace>Charles Building</replace>
@@ -2022,8 +2034,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/loginandregistration/helper/SessionManager.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/ss.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/../android_login_api/login.php" />
@@ -2069,9 +2079,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppConfig.java" />
         <option value="C:/xampp/htdocs/android_login_api/getbookings.php" />
         <option value="C:/xampp/htdocs/android_login_api/include/DB_Functions.php" />
-        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Booking.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_resources.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/SpeechPatterns.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/OnClockTickListner.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Clock.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Booking.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java" />
       </list>
     </option>
@@ -2210,7 +2222,7 @@
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1522540379593" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1522548449592" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1522196632839" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.0.1" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -2695,7 +2707,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522526176416</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Store userID within the booking details">
+      <created>1522540449085</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1522540449085</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2790,7 +2809,8 @@
     <MESSAGE value="Used Soundex pattern to improve speech detection" />
     <MESSAGE value="Fixed a glitch caused by backend API" />
     <MESSAGE value="Store userID within the booking details" />
-    <option name="LAST_COMMIT_MESSAGE" value="Store userID within the booking details" />
+    <MESSAGE value="Added popup when booking is starting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added popup when booking is starting" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -2802,23 +2822,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/AllTheRecipes-Finished/app/src/main/res/layout/list_item_recipe.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="12" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/AllTheRecipes-Finished/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listview.xml" />
     <entry file="file://$USER_HOME$/Desktop/AllTheRecipes-Finished/app/src/main/java/com/raywenderlich/alltherecipes/Recipe.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3078,25 +3081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_homescreen.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="51" column="41" lean-forward="false" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
-          <folding>
-            <element signature="e#1010#1040#0" expanded="false" />
-            <element signature="e#2752#2767#0" expanded="false" />
-            <element signature="e#4731#4755#0" expanded="false" />
-            <element signature="e#5158#5182#0" expanded="false" />
-            <element signature="e#5525#5541#0" expanded="false" />
-            <element signature="e#6926#6951#0" expanded="false" />
-            <element signature="e#7717#7748#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v14/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3201,21 +3185,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Booking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="18" />
-          <folding>
-            <element signature="e#991#992#0" expanded="false" />
-            <element signature="e#1026#1027#0" expanded="false" />
-            <element signature="e#1061#1062#0" expanded="false" />
-            <element signature="e#1092#1093#0" expanded="false" />
-            <element signature="e#1125#1126#0" expanded="false" />
-            <element signature="e#1154#1155#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_resources.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3238,31 +3207,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_homescreen.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="71" column="25" lean-forward="false" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/OnClockTickListner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Clock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="94" column="24" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/SpeechPatterns.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="175" column="23" lean-forward="true" selection-start-line="175" selection-start-column="23" selection-end-line="175" selection-end-column="23" />
+        <state relative-caret-position="357">
+          <caret line="221" column="45" lean-forward="true" selection-start-line="219" selection-start-column="8" selection-end-line="221" selection-end-column="45" />
           <folding>
-            <element signature="method#reserveRoom#0;class#SpeechPatterns#0" expanded="false" />
             <element signature="method#reserveRoomAtCharles#0;class#SpeechPatterns#0" expanded="false" />
             <element signature="method#reservePC#0;class#SpeechPatterns#0" expanded="false" />
-            <element signature="method#reservePCAtCharles#0;class#SpeechPatterns#0" expanded="false" />
             <element signature="method#capitalizeFirstLetter#0;class#SpeechPatterns#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Booking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#1201#1202#0" expanded="true" />
+            <element signature="e#1235#1236#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="153" column="0" lean-forward="true" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+        <state relative-caret-position="290">
+          <caret line="280" column="30" lean-forward="false" selection-start-line="280" selection-start-column="30" selection-end-line="280" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#onCreate#0;class#HomescreenActivity#0" expanded="false" />
+            <element signature="e#3282#6530#0" expanded="true" />
+            <element signature="e#5890#6366#0" expanded="true" />
+            <element signature="e#6365#6366#0" expanded="true" />
+            <element signature="e#6529#6530#0" expanded="true" />
+            <element signature="e#7409#7560#0" expanded="true" />
+            <element signature="e#7559#7560#0" expanded="true" />
+            <element signature="e#7633#7943#0" expanded="true" />
+            <element signature="e#7942#7943#0" expanded="true" />
+            <element signature="e#8020#8167#0" expanded="true" />
+            <element signature="e#8166#8167#0" expanded="true" />
             <element signature="method#logoutUser#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="method#askSpeechInput#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="method#onActivityResult#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="method#createNewBooking#0;class#HomescreenActivity#0" expanded="false" />
-            <element signature="e#10406#10422#0" expanded="true" />
+            <element signature="e#14119#14135#0" expanded="true" />
             <element signature="method#getAllBookings#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="method#showDialog#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="method#hideDialog#0;class#HomescreenActivity#0" expanded="false" />
