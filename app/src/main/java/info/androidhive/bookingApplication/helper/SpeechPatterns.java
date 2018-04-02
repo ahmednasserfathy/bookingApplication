@@ -35,10 +35,15 @@ public class SpeechPatterns {
         Soundex soundex = new Soundex();
         String phoneticValue = soundex.encode("for");
         String phoneticValue2 = soundex.encode("to");
+        String phoneticValue3 = soundex.encode("can");
         if (soundex.encode(nameNum).equals(phoneticValue)) {
             nameNum = "4";
         } else if (soundex.encode(nameNum).equals(phoneticValue2)) {
             nameNum = "2";
+        }
+
+        if (name.equals("can")) {
+            name = "scan";
         }
 
         // Combine words before sending to database
@@ -93,6 +98,10 @@ public class SpeechPatterns {
             nameNum = "4";
         } else if (soundex.encode(nameNum).equals(phoneticValue2)) {
             nameNum = "2";
+        }
+
+        if (name.equals("can")) {
+            name = "scan";
         }
 
         // Combine words before sending to database

@@ -190,7 +190,11 @@ public class HomescreenActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                logoutUser();
+                //logoutUser();
+                c.StopTick();
+                Intent intent = new Intent(HomescreenActivity.this, AlarmActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
@@ -233,9 +237,9 @@ public class HomescreenActivity extends AppCompatActivity {
             case REQ_CODE_SPEECH_INPUT: {
                 if (resultCode == RESULT_OK && null != data) {
 
-//                    ArrayList<String> result = data
-//                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    speechText = "reserve room 4 on the 1st of april at 2:59 a.m. in Library level 1";
+                    ArrayList<String> result = data
+                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    speechText = result.get(0);
                     Log.d(TAG, "Speech input: " + speechText);
 
 
