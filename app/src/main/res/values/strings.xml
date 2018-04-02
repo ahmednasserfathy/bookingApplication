@@ -29,5 +29,7 @@
     <string name="there_are_no_bookings">There are no bookings</string>
     <string name="recent_bookings">Recent Bookings</string>
     <string name="logout">Logout</string>
+    <string name="dialog_title">Warning!</string>
+    <string name="datedialogbutton_text">Launch DatePickerDialog</string>
 
 </resources>

@@ -65,6 +65,8 @@ public class HomescreenActivity extends AppCompatActivity {
     private ArrayList<Booking> bookingList;
     private String userID;
     private Clock c;
+    private String name, siteLocation, location;
+    private boolean valid = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,18 +125,8 @@ public class HomescreenActivity extends AppCompatActivity {
 
                                 if (day.equals(currentDay)) {
                                     booking.setStatus("In progress");
-                                    new AlertDialog.Builder(getContext())
-                                            .setTitle("Booking initiated!")
-                                            .setMessage("Your booking: " + booking.getName() + " at "
-                                                    + booking.getSiteLocation() + ", "
-                                                    + booking.getLocation() + " has started")
-                                            .setIcon(android.R.drawable.ic_dialog_alert)
-                                            .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-                                                public void onClick(DialogInterface dialog, int whichButton) {
-                                                    RecentBookingsAdapter adapter = new RecentBookingsAdapter(getContext(), bookingList);
-                                                    recentBookingsList.setAdapter(adapter);
-                                                }
-                                            }).show();
+                                    RecentBookingsAdapter adapter = new RecentBookingsAdapter(getContext(), bookingList);
+                                    recentBookingsList.setAdapter(adapter);
                                 }
                             }
                         }
@@ -190,11 +182,7 @@ public class HomescreenActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                //logoutUser();
-                c.StopTick();
-                Intent intent = new Intent(HomescreenActivity.this, AlarmActivity.class);
-                startActivity(intent);
-                finish();
+                logoutUser();
             }
         });
     }
@@ -269,8 +257,9 @@ public class HomescreenActivity extends AppCompatActivity {
                             }
                         }
 
-                        if (params != null)
+                        if (params != null) {
                             createNewBooking(params[0], params[1], params[2], params[3]);
+                        }
                         else
                             Toast.makeText(getApplicationContext(),
                                     "Invalid command!", Toast.LENGTH_LONG).show();
@@ -303,6 +292,10 @@ public class HomescreenActivity extends AppCompatActivity {
                     boolean error = jObj.getBoolean("error");
 
                     if (!error) {
+                        valid = true;
+                        name = rName;
+                        siteLocation = rSiteLocation;
+                        location = rLocation;
                         try {
                             JSONArray data = jObj.getJSONArray("theData");
                             try {
@@ -316,21 +309,29 @@ public class HomescreenActivity extends AppCompatActivity {
                     } else {
                         // Error occurred in database. Get the error
                         // message
+                        valid = false;
                         String errorMsg = jObj.getString("error_msg");
                         Toast.makeText(getApplicationContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
                     }
-                    RecentBookingsAdapter adapter = new RecentBookingsAdapter(getContext(), bookingList);
-                    recentBookingsList.setAdapter(adapter);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
+                if(valid == true){
+                    c.StopTick();
+                    Intent intent = new Intent(HomescreenActivity.this, AlarmActivity.class);
+                    intent.putExtra("name", name);
+                    intent.putExtra("siteLocation", siteLocation);
+                    intent.putExtra("location", location);
+                    startActivity(intent);
+                    finish();
+                }
             }
         }, new Response.ErrorListener() {
 
             @Override
             public void onErrorResponse(VolleyError error) {
+                valid = false;
                 Log.e(TAG, "Resources Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
                         error.getMessage(), Toast.LENGTH_LONG).show();
@@ -349,9 +350,7 @@ public class HomescreenActivity extends AppCompatActivity {
                 params.put("location", rLocation);
                 return params;
             }
-
         };
-
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }

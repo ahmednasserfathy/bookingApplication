@@ -35,11 +35,19 @@ public class SpeechPatterns {
         Soundex soundex = new Soundex();
         String phoneticValue = soundex.encode("for");
         String phoneticValue2 = soundex.encode("to");
-        String phoneticValue3 = soundex.encode("can");
+        String phoneticValue3 = soundex.encode("Owen");
         if (soundex.encode(nameNum).equals(phoneticValue)) {
             nameNum = "4";
         } else if (soundex.encode(nameNum).equals(phoneticValue2)) {
             nameNum = "2";
+        }
+
+        if(soundex.encode(rSiteLocation).equals(phoneticValue3)){
+            rSiteLocation = "owen";
+        }
+
+        if (rSiteLocation.equals("erwin")) {
+            rSiteLocation = "Owen";
         }
 
         if (name.equals("can")) {
@@ -156,6 +164,15 @@ public class SpeechPatterns {
             nameNum = "4";
         } else if (soundex.encode(nameNum).equals(phoneticValue2)) {
             nameNum = "2";
+        }
+
+        String phoneticValue3 = soundex.encode("Owen");
+        if(soundex.encode(rSiteLocation).equals(phoneticValue3)){
+            rSiteLocation = "owen";
+        }
+
+        if (rSiteLocation.equals("erwin")) {
+            rSiteLocation = "Owen";
         }
 
         // Combine words before sending to database
