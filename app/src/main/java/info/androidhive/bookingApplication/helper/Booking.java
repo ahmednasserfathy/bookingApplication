@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 public class Booking {
 
+    private int id;
     private String name;
     private String dateBooked;
     private String siteLocation;
@@ -13,6 +14,7 @@ public class Booking {
 
     public Booking(JSONObject obj) {
         try {
+            this.id = obj.getInt("id");
             this.name = obj.getString("name").toString();
             this.dateBooked = obj.getString("dateBooked").toString();
             this.siteLocation = obj.getString("siteLocation").toString();
@@ -23,6 +25,10 @@ public class Booking {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public int getID() {
+        return id;
     }
 
     public String getName() {

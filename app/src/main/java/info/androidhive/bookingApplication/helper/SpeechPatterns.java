@@ -62,6 +62,13 @@ public class SpeechPatterns {
         time = time.toUpperCase();
         month = capitalizeFirstLetter(month);
 
+        String trim = hourAndMins.trim();
+        int numOfWords = trim.split(":").length;
+
+        if(numOfWords == 1){
+            hourAndMins = hourAndMins + ":00";
+        }
+
         // 10:30 AM 14th, March
         rDateBooked = hourAndMins + " " + time + " " + day + ", " + month;
 
@@ -119,6 +126,13 @@ public class SpeechPatterns {
         time = time.replace(".", "");
         time = time.toUpperCase();
         month = capitalizeFirstLetter(month);
+
+        String trim = hourAndMins.trim();
+        int numOfWords = trim.split(":").length;
+
+        if(numOfWords == 1){
+            hourAndMins = hourAndMins + ":00";
+        }
 
         // 10:30 AM 14th, March
         rDateBooked = hourAndMins + " " + time + " " + day + ", " + month;
@@ -188,6 +202,13 @@ public class SpeechPatterns {
         time = time.toUpperCase();
         month = capitalizeFirstLetter(month);
 
+        String trim = hourAndMins.trim();
+        int numOfWords = trim.split(":").length;
+
+        if(numOfWords == 1){
+            hourAndMins = hourAndMins + ":00";
+        }
+
         // 10:30 AM 14th, March
         rDateBooked = hourAndMins + " " + time + " " + day + ", " + month;
 
@@ -247,6 +268,13 @@ public class SpeechPatterns {
         time = time.toUpperCase();
         month = capitalizeFirstLetter(month);
 
+        String trim = hourAndMins.trim();
+        int numOfWords = trim.split(":").length;
+
+        if(numOfWords == 1){
+            hourAndMins = hourAndMins + ":00";
+        }
+
         // 10:30 AM 14th, March
         rDateBooked = hourAndMins + " " + time + " " + day + ", " + month;
 
@@ -254,6 +282,22 @@ public class SpeechPatterns {
         rLocation = capitalizeFirstLetter(rLocation);
 
         return new String[]{rName, rDateBooked, rSiteLocation, rLocation};
+    }
+
+    public static String cancelBooking(String speechText) {
+        StringTokenizer stringTokenizer = new StringTokenizer(speechText);
+        // Separate each word
+        stringTokenizer.nextElement().toString();
+        stringTokenizer.nextElement().toString();
+        stringTokenizer.nextElement().toString();
+        return stringTokenizer.nextElement().toString();
+    }
+    public static String finishBooking(String speechText) {
+        StringTokenizer stringTokenizer = new StringTokenizer(speechText);
+        // Separate each word
+        stringTokenizer.nextElement().toString();
+        stringTokenizer.nextElement().toString();
+        return stringTokenizer.nextElement().toString();
     }
 
     private static String capitalizeFirstLetter(String original) {

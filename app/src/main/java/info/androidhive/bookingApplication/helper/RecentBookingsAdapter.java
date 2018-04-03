@@ -47,6 +47,9 @@ public class RecentBookingsAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View rowView = mInflater.inflate(R.layout.list_item_bookings, parent, false);
         // Get title element
+        TextView idView =
+                rowView.findViewById(R.id.booking_list_id);
+        // Get title element
         TextView titleTextView =
                 rowView.findViewById(R.id.booking_list_title);
         // Get subtitle element
@@ -63,9 +66,10 @@ public class RecentBookingsAdapter extends BaseAdapter {
                 rowView.findViewById(R.id.booking_list_thumbnail);
 
         Booking aBooking = (Booking) getItem(position);
+        idView.setText("ID: " + aBooking.getID());
         titleTextView.setText(aBooking.getName());
         subtitleTextView.setText(aBooking.getDateBooked());
-        statusTextView.setText("Status: " + aBooking.getStatus());
+        statusTextView.setText(aBooking.getStatus());
         siteLocationTextView.setText(aBooking.getSiteLocation());
         locationTextView.setText(aBooking.getLocation());
 
@@ -82,6 +86,7 @@ public class RecentBookingsAdapter extends BaseAdapter {
             thumbnailImageView.setImageResource(R.drawable.scanner);
         }
 
+        idView.setTextColor(Color.BLACK);
         titleTextView.setTextColor(Color.BLACK);
         subtitleTextView.setTextColor(Color.BLACK);
         statusTextView.setTextColor(Color.BLACK);

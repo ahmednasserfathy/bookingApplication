@@ -12,4 +12,8 @@ public class AppConfig {
     public static String URL_CREATE_BOOKING = "http://192.168.0.12/android_login_api/createbooking.php";
     // Server get bookings based on user id
     public static String URL_GET_BOOKINGS = "http://192.168.0.12/android_login_api/getbookings.php";
+    // Cancel booking
+    public static String URL_REMOVE_BOOKING = "http://192.168.0.12/android_login_api/removebooking.php";
+    // Update booking
+    public static String URL_UPDATE_BOOKING = "http://192.168.0.12/android_login_api/updatebooking.php";
 }

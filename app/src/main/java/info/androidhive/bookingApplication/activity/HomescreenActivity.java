@@ -9,9 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
-import android.text.format.DateFormat;
 import android.text.format.Time;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -27,7 +27,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.Format;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -50,6 +50,8 @@ import static info.androidhive.bookingApplication.helper.SpeechPatterns.reserveP
 import static info.androidhive.bookingApplication.helper.SpeechPatterns.reservePCAtCharles;
 import static info.androidhive.bookingApplication.helper.SpeechPatterns.reserveRoom;
 import static info.androidhive.bookingApplication.helper.SpeechPatterns.reserveRoomAtCharles;
+import static info.androidhive.bookingApplication.helper.SpeechPatterns.cancelBooking;
+import static info.androidhive.bookingApplication.helper.SpeechPatterns.finishBooking;
 
 public class HomescreenActivity extends AppCompatActivity {
 
@@ -90,49 +92,25 @@ public class HomescreenActivity extends AppCompatActivity {
             public void OnMinuteTick(Time currentTime) {
 
                 for (Booking booking : bookingList) {
-                    if (booking.getStatus().equals("Upcoming")) {
-
-                        StringTokenizer stringTokenizer = new StringTokenizer(booking.getDateBooked());
-                        String day, month, hourAndMins;
-
-                        // Separate each word
-                        hourAndMins = stringTokenizer.nextElement().toString() + " "
-                                + stringTokenizer.nextElement().toString();
-                        day = stringTokenizer.nextElement().toString();
-                        month = stringTokenizer.nextElement().toString();
-                        day = day.replace(",", "");
-
-                        if (hourAndMins.equals(DateFormat.format("h:mm aa"
-                                , currentTime.toMillis(true)).toString())) {
-
-                            Format formatter = new SimpleDateFormat("MMMM");
-                            String currentMonth = formatter.format(new Date());
-
-                            if (month.equals(currentMonth)) {
-
-                                if (day.contains("st")) {
-                                    day = day.replace("st", "");
-                                } else if (day.contains("nd")) {
-                                    day = day.replace("nd", "");
-                                } else if (day.contains("rd")) {
-                                    day = day.replace("rd", "");
-                                } else if (day.contains("th")) {
-                                    day = day.replace("th", "");
-                                }
-
-                                Format formatter2 = new SimpleDateFormat("d");
-                                String currentDay = formatter2.format(new Date());
-
-                                if (day.equals(currentDay)) {
-                                    booking.setStatus("In progress");
-                                    RecentBookingsAdapter adapter = new RecentBookingsAdapter(getContext(), bookingList);
-                                    recentBookingsList.setAdapter(adapter);
-                                }
-                            }
-                        }
+                    if(booking.getStatus().equals("Upcoming")
+                            && !isValidBookDate(booking.getDateBooked())){
+                        booking.setStatus("In progress");
+                        updateBookingStatus("In progress", booking.getName(),
+                                booking.getSiteLocation(), booking.getLocation());
+                        new AlertDialog.Builder(getContext())
+                                .setTitle("Booking initiated!")
+                                .setMessage("Your booking: " + booking.getName() + " at "
+                                        + booking.getSiteLocation() + ", "
+                                        + booking.getLocation() + " has started")
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int whichButton) {
+                                        RecentBookingsAdapter adapter = new RecentBookingsAdapter(getContext(), bookingList);
+                                        recentBookingsList.setAdapter(adapter);
+                                    }
+                                }).show();
                     }
                 }
-
             }
         });
 
@@ -203,6 +181,10 @@ public class HomescreenActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Create a new request to the GOOGLE API to allow the app
+     * to have access to recognize intent
+     */
     private void askSpeechInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
@@ -213,10 +195,12 @@ public class HomescreenActivity extends AppCompatActivity {
         try {
             startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
         } catch (ActivityNotFoundException a) {
-
         }
     }
 
+    /**
+     * Handle speech recognizer results
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -247,22 +231,46 @@ public class HomescreenActivity extends AppCompatActivity {
                                     || speechText.contains("scan")) {
                                 if (numOfWords == 15)
                                     params = reserveRoom(speechText);
-                                else if (numOfWords == 16)
+                                else if (numOfWords == 16 && speechText.contains("charles"))
                                     params = reserveRoomAtCharles(speechText);
                             } else if (speechText.contains("pc")) {
                                 if (numOfWords == 16)
                                     params = reservePC(speechText);
-                                else if (numOfWords == 17)
+                                else if (numOfWords == 17 && speechText.contains("charles"))
                                     params = reservePCAtCharles(speechText);
                             }
                         }
-
                         if (params != null) {
-                            createNewBooking(params[0], params[1], params[2], params[3]);
-                        }
-                        else
+                            if (isValidBookDate(params[1]))
+                                createNewBooking(params[0], params[1], params[2], params[3]);
+                            else
+                                Toast.makeText(getApplicationContext(),
+                                        "Invalid booking date!", Toast.LENGTH_LONG).show();
+                        } else
                             Toast.makeText(getApplicationContext(),
                                     "Invalid command!", Toast.LENGTH_LONG).show();
+                    }
+                    else if(speechText.startsWith("cancel") ||
+                                speechText.startsWith("finish")){
+
+                        if(numOfWords == 4) {
+                            int id = Integer.parseInt(cancelBooking(speechText));
+                            for(Booking b: bookingList){
+                                if(b.getID() == id){
+                                    removeBooking(Integer.toString(id), b.getName(),
+                                            b.getSiteLocation(), b.getLocation());
+                                }
+                            }
+                        }
+                        if(numOfWords == 3) {
+                            int id = Integer.parseInt(finishBooking(speechText));
+                            for(Booking b: bookingList){
+                                if(b.getID() == id){
+                                    removeBooking(Integer.toString(id), b.getName(),
+                                            b.getSiteLocation(), b.getLocation());
+                                }
+                            }
+                        }
                     }
                 }
                 break;
@@ -270,6 +278,48 @@ public class HomescreenActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Check if the date is valid
+     */
+    private boolean isValidBookDate(String date) {
+
+        StringTokenizer stringTokenizer = new StringTokenizer(date);
+        String day, month, hourAndMins, fullDate;
+
+        // Separate each word
+        hourAndMins = stringTokenizer.nextElement().toString() + " "
+                + stringTokenizer.nextElement().toString();
+        day = stringTokenizer.nextElement().toString();
+        month = stringTokenizer.nextElement().toString();
+        day = day.replace(",", "");
+
+        if (day.contains("st")) {
+            day = day.replace("st", "");
+        } else if (day.contains("nd")) {
+            day = day.replace("nd", "");
+        } else if (day.contains("rd")) {
+            day = day.replace("rd", "");
+        } else if (day.contains("th")) {
+            day = day.replace("th", "");
+        }
+
+        fullDate = "2018 " + month + " " + day + " " + hourAndMins;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMMM d hh:mm aa");
+        Date currentDate = new Date();
+        try {
+            Date date1 = sdf.parse(fullDate);
+            if (currentDate.equals(date1) || currentDate.before(date1)) {
+                return true;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * Create a new booking based on parameters
+     */
     private void createNewBooking(final String rName, final String rDateBooked, final String rSiteLocation
             , final String rLocation) {
         // Tag used to cancel the request
@@ -317,7 +367,7 @@ public class HomescreenActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                if(valid == true){
+                if (valid == true) {
                     c.StopTick();
                     Intent intent = new Intent(HomescreenActivity.this, AlarmActivity.class);
                     intent.putExtra("name", name);
@@ -355,6 +405,9 @@ public class HomescreenActivity extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
 
+    /**
+     * LRetrieve all books and updates them on the ListView
+     */
     private void getAllBookings(final String userID) {
         // Tag used to cancel the request
         String tag_string_req = "req_getBookings";
@@ -418,6 +471,117 @@ public class HomescreenActivity extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
 
+    private void updateBookingStatus(final String status, final String rName, final String rSiteLocation, final String rLocation) {
+        // Tag used to cancel the request
+        String tag_string_req = "req_updatebooking";
+
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                AppConfig.URL_UPDATE_BOOKING, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, "Update booking: " + response.toString());
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    boolean error = jObj.getBoolean("error");
+
+                    if (!error) {
+                        RecentBookingsAdapter adapter = new RecentBookingsAdapter(
+                                getContext(), bookingList);
+                        recentBookingsList.setAdapter(adapter);
+                    } else {
+                        // Error occurred in database. Get the error
+                        // message
+                        String errorMsg = jObj.getString("error_msg");
+                        Toast.makeText(getApplicationContext(),
+                                errorMsg, Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                valid = false;
+                Log.e(TAG, "Booking update error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting params to createbooking url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("status", status);
+                params.put("name", rName);
+                params.put("siteLocation", rSiteLocation);
+                params.put("location", rLocation);
+                return params;
+            }
+        };
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+    }
+
+    private void removeBooking(final String id, final String rName, final String rSiteLocation, final String rLocation) {
+        // Tag used to cancel the request
+        String tag_string_req = "req_removebooking";
+
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                AppConfig.URL_REMOVE_BOOKING, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, "Remove booking " + response.toString());
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    boolean error = jObj.getBoolean("error");
+
+                    if (!error) {
+                        RecentBookingsAdapter adapter = new RecentBookingsAdapter(
+                                getContext(), bookingList);
+                        recentBookingsList.setAdapter(adapter);
+                    } else {
+                        // Error occurred in database. Get the error
+                        // message
+                        String errorMsg = jObj.getString("error_msg");
+                        Toast.makeText(getApplicationContext(),
+                                errorMsg, Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                valid = false;
+                Log.e(TAG, "Booking removal error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting params to createbooking url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("id", id);
+                params.put("name", rName);
+                params.put("siteLocation", rSiteLocation);
+                params.put("location", rLocation);
+                return params;
+            }
+        };
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+    }
+
     private Context getContext() {
         return this;
     }
@@ -430,5 +594,15 @@ public class HomescreenActivity extends AppCompatActivity {
     private void hideDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            c.StopTick();
+            finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
