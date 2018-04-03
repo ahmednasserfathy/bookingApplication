@@ -72,6 +72,10 @@
         "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0be8f59765632fabd51d61022563746d\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
+        "merged": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_single_booking.xml.flat",
+        "source": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\src\\main\\res\\layout\\layout_single_booking.xml"
+    },
+    {
         "merged": "C:\\Users\\PC\\Documents\\GitHub\\bookingApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\4cc92393465994ab12e395bda1c022f4\\res\\drawable\\notification_bg.xml"
     },

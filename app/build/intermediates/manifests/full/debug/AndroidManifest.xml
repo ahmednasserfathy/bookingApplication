@@ -55,6 +55,11 @@
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:noHistory="true" />
+        <activity
+            android:name="info.androidhive.bookingApplication.activity.BookingActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:noHistory="true" />
 
         <receiver
             android:name="info.androidhive.bookingApplication.activity.AlarmReceiever"

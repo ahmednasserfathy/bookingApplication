@@ -13,6 +13,7 @@ import android.text.format.Time;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -46,6 +47,7 @@ import info.androidhive.bookingApplication.helper.RecentBookingsAdapter;
 import info.androidhive.bookingApplication.helper.SQLiteHandler;
 import info.androidhive.bookingApplication.helper.SessionManager;
 
+import static info.androidhive.bookingApplication.helper.SpeechPatterns.finishBookingTest;
 import static info.androidhive.bookingApplication.helper.SpeechPatterns.reservePC;
 import static info.androidhive.bookingApplication.helper.SpeechPatterns.reservePCAtCharles;
 import static info.androidhive.bookingApplication.helper.SpeechPatterns.reserveRoom;
@@ -155,6 +157,18 @@ public class HomescreenActivity extends AppCompatActivity {
                 finish();
             }
         });
+        // Set an item click listener for ListView
+        recentBookingsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get the selected item text from ListView
+                Booking selectedItem = (Booking)parent.getItemAtPosition(position);
+                c.StopTick();
+                Intent intent = new Intent(HomescreenActivity.this, BookingActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         // Logout button click event
         btnLogout.setOnClickListener(new View.OnClickListener() {
 
@@ -221,7 +235,8 @@ public class HomescreenActivity extends AppCompatActivity {
                     int numOfWords = trim.split("\\s+").length;
 
                     // Create a new booking
-                    if (speechText.startsWith("reserve")) {
+                    if (speechText.startsWith("reserve")||
+                            speechText.startsWith("book")) {
 
                         String[] params = null;
                         if (numOfWords == 15 || numOfWords == 16 || numOfWords == 17) {
@@ -251,10 +266,31 @@ public class HomescreenActivity extends AppCompatActivity {
                                     "Invalid command!", Toast.LENGTH_LONG).show();
                     }
                     else if(speechText.startsWith("cancel") ||
-                                speechText.startsWith("finish")){
+                                speechText.startsWith("finish")||
+                                speechText.startsWith("remove")||
+                                speechText.startsWith("delete")){
 
                         if(numOfWords == 4) {
-                            int id = Integer.parseInt(cancelBooking(speechText));
+                            String theID = cancelBooking(speechText);
+                            if(theID.contains("id")){
+                                theID = theID.replace("id", "");
+                            }
+                            int id = Integer.parseInt(theID);
+                            for(Booking b: bookingList){
+                                if(b.getID() == id){
+                                    removeBooking(Integer.toString(id), b.getName(),
+                                            b.getSiteLocation(), b.getLocation());
+                                    bookingList.remove(b);
+                                    break;
+                                }
+                            }
+                        }
+                        else if(numOfWords == 3) {
+                            String theID = finishBooking(speechText);
+                            if(theID.contains("id")){
+                                 theID = theID.replace("id", "");
+                            }
+                            int id = Integer.parseInt(theID);
                             for(Booking b: bookingList){
                                 if(b.getID() == id){
                                     removeBooking(Integer.toString(id), b.getName(),
@@ -262,15 +298,29 @@ public class HomescreenActivity extends AppCompatActivity {
                                 }
                             }
                         }
-                        if(numOfWords == 3) {
-                            int id = Integer.parseInt(finishBooking(speechText));
+                        else if(numOfWords == 2) {
+                            String theID = finishBookingTest(speechText);
+                            if(theID.contains("id")){
+                                theID = theID.replace("id", "");
+                            }
+                            int id = Integer.parseInt(theID);
                             for(Booking b: bookingList){
                                 if(b.getID() == id){
                                     removeBooking(Integer.toString(id), b.getName(),
                                             b.getSiteLocation(), b.getLocation());
+                                    bookingList.remove(b);
+                                    RecentBookingsAdapter adapterNew = new RecentBookingsAdapter(
+                                            getContext(), bookingList);
+                                    recentBookingsList.setAdapter(adapterNew);
+                                    break;
                                 }
                             }
                         }
+                    }
+                    else if (speechText.contains("out") ||
+                            speechText.contains("log") ||
+                            speechText.contains("sign")){
+                        logoutUser();
                     }
                 }
                 break;
@@ -411,6 +461,11 @@ public class HomescreenActivity extends AppCompatActivity {
     private void getAllBookings(final String userID) {
         // Tag used to cancel the request
         String tag_string_req = "req_getBookings";
+
+        // Progress box
+        pDialog.setMessage("Getting recent bookings..");
+        showDialog();
+
         StringRequest strReq = new StringRequest(Request.Method.POST,
                 AppConfig.URL_GET_BOOKINGS, new Response.Listener<String>() {
 
@@ -531,21 +586,26 @@ public class HomescreenActivity extends AppCompatActivity {
         // Tag used to cancel the request
         String tag_string_req = "req_removebooking";
 
+        // Progress box
+        pDialog.setMessage("Checking booking...");
+        showDialog();
+
         StringRequest strReq = new StringRequest(Request.Method.POST,
                 AppConfig.URL_REMOVE_BOOKING, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
                 Log.d(TAG, "Remove booking " + response.toString());
+                hideDialog();
 
                 try {
                     JSONObject jObj = new JSONObject(response);
                     boolean error = jObj.getBoolean("error");
 
                     if (!error) {
-                        RecentBookingsAdapter adapter = new RecentBookingsAdapter(
-                                getContext(), bookingList);
-                        recentBookingsList.setAdapter(adapter);
+                        Toast.makeText(getApplicationContext(),
+                                "Booking removal/completion done",
+                                Toast.LENGTH_LONG).show();
                     } else {
                         // Error occurred in database. Get the error
                         // message
@@ -561,7 +621,7 @@ public class HomescreenActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                valid = false;
+                hideDialog();
                 Log.e(TAG, "Booking removal error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
                         error.getMessage(), Toast.LENGTH_LONG).show();

@@ -290,14 +290,68 @@ public class SpeechPatterns {
         stringTokenizer.nextElement().toString();
         stringTokenizer.nextElement().toString();
         stringTokenizer.nextElement().toString();
-        return stringTokenizer.nextElement().toString();
+        String id = stringTokenizer.nextElement().toString();
+
+        // Using soundex algorithm to correct words
+        Soundex soundex = new Soundex();
+        String phoneticValue = soundex.encode("for");
+        String phoneticValue2 = soundex.encode("to");
+        String phoneticValue3 = soundex.encode("five");
+        if (soundex.encode(id).equals(phoneticValue)) {
+            id = "4";
+        } else if (soundex.encode(id).equals(phoneticValue2)) {
+            id = "2";
+        }
+        else if (soundex.encode(id).equals(phoneticValue3)) {
+            id = "5";
+        }
+
+        return id;
     }
     public static String finishBooking(String speechText) {
         StringTokenizer stringTokenizer = new StringTokenizer(speechText);
         // Separate each word
         stringTokenizer.nextElement().toString();
         stringTokenizer.nextElement().toString();
-        return stringTokenizer.nextElement().toString();
+        String id = stringTokenizer.nextElement().toString();
+
+        // Using soundex algorithm to correct words
+        Soundex soundex = new Soundex();
+        String phoneticValue = soundex.encode("for");
+        String phoneticValue2 = soundex.encode("to");
+        String phoneticValue3 = soundex.encode("five");
+        if (soundex.encode(id).equals(phoneticValue)) {
+            id = "4";
+        } else if (soundex.encode(id).equals(phoneticValue2)) {
+            id = "2";
+        }
+        else if (soundex.encode(id).equals(phoneticValue3)) {
+            id = "5";
+        }
+
+        return id;
+    }
+    public static String finishBookingTest(String speechText) {
+        StringTokenizer stringTokenizer = new StringTokenizer(speechText);
+        // Separate each word
+        stringTokenizer.nextElement().toString();
+        String id = stringTokenizer.nextElement().toString();
+
+        // Using soundex algorithm to correct words
+        Soundex soundex = new Soundex();
+        String phoneticValue = soundex.encode("for");
+        String phoneticValue2 = soundex.encode("to");
+        String phoneticValue3 = soundex.encode("five");
+        if (soundex.encode(id).equals(phoneticValue)) {
+            id = "4";
+        } else if (soundex.encode(id).equals(phoneticValue2)) {
+            id = "2";
+        }
+        else if (soundex.encode(id).equals(phoneticValue3)) {
+            id = "5";
+        }
+
+        return id;
     }
 
     private static String capitalizeFirstLetter(String original) {
