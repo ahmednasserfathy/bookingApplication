@@ -19,6 +19,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -94,8 +95,8 @@ public class HomescreenActivity extends AppCompatActivity {
             public void OnMinuteTick(Time currentTime) {
 
                 for (Booking booking : bookingList) {
-                    if(booking.getStatus().equals("Upcoming")
-                            && !isValidBookDate(booking.getDateBooked())){
+                    if (booking.getStatus().equals("Upcoming")
+                            && !isValidBookDate(booking.getDateBooked())) {
                         booking.setStatus("In progress");
                         updateBookingStatus("In progress", booking.getName(),
                                 booking.getSiteLocation(), booking.getLocation());
@@ -132,11 +133,22 @@ public class HomescreenActivity extends AppCompatActivity {
             logoutUser();
         }
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String condition = extras.getString("condition");
+            if(condition.equals("cancelBooking"))
+            {
+                String sentID, sentName, sentSiteLocation, sentLocation;
+                sentID = extras.getString("sentID");
+                sentName = extras.getString("sentName");
+                sentSiteLocation = extras.getString("sentSiteLocation");
+                sentLocation = extras.getString("sentLocation");
+                removeBooking(sentID, sentName, sentSiteLocation, sentLocation);
+            }
+        }
+
         bookingList = new ArrayList<>();
         getAllBookings(userID);
-
-        RecentBookingsAdapter adapter = new RecentBookingsAdapter(this, bookingList);
-        recentBookingsList.setAdapter(adapter);
 
         // Create new booking
         btnCreateBooking.setOnClickListener(new View.OnClickListener() {
@@ -162,9 +174,15 @@ public class HomescreenActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Get the selected item text from ListView
-                Booking selectedItem = (Booking)parent.getItemAtPosition(position);
+                Booking selectedItem = (Booking) parent.getItemAtPosition(position);
                 c.StopTick();
                 Intent intent = new Intent(HomescreenActivity.this, BookingActivity.class);
+                intent.putExtra("id", selectedItem.getID());
+                intent.putExtra("name", selectedItem.getName());
+                intent.putExtra("status", selectedItem.getStatus());
+                intent.putExtra("date", selectedItem.getDateBooked());
+                intent.putExtra("siteLocation", selectedItem.getSiteLocation());
+                intent.putExtra("location", selectedItem.getLocation());
                 startActivity(intent);
                 finish();
             }
@@ -235,7 +253,7 @@ public class HomescreenActivity extends AppCompatActivity {
                     int numOfWords = trim.split("\\s+").length;
 
                     // Create a new booking
-                    if (speechText.startsWith("reserve")||
+                    if (speechText.startsWith("reserve") ||
                             speechText.startsWith("book")) {
 
                         String[] params = null;
@@ -264,62 +282,81 @@ public class HomescreenActivity extends AppCompatActivity {
                         } else
                             Toast.makeText(getApplicationContext(),
                                     "Invalid command!", Toast.LENGTH_LONG).show();
-                    }
-                    else if(speechText.startsWith("cancel") ||
-                                speechText.startsWith("finish")||
-                                speechText.startsWith("remove")||
-                                speechText.startsWith("delete")){
+                    } else if (speechText.startsWith("cancel") ||
+                            speechText.startsWith("finish") ||
+                            speechText.startsWith("remove") ||
+                            speechText.startsWith("delete")) {
 
-                        if(numOfWords == 4) {
+                        if (numOfWords == 4) {
                             String theID = cancelBooking(speechText);
-                            if(theID.contains("id")){
+                            if (theID.contains("id")) {
                                 theID = theID.replace("id", "");
                             }
-                            int id = Integer.parseInt(theID);
-                            for(Booking b: bookingList){
-                                if(b.getID() == id){
-                                    removeBooking(Integer.toString(id), b.getName(),
-                                            b.getSiteLocation(), b.getLocation());
-                                    bookingList.remove(b);
-                                    break;
+                            try {
+                                int id = Integer.parseInt(theID);
+                                for (Booking b : bookingList) {
+                                    if (b.getID() == id) {
+                                        removeBooking(Integer.toString(id), b.getName(),
+                                                b.getSiteLocation(), b.getLocation());
+                                        bookingList.remove(b);
+                                        RecentBookingsAdapter adapterNew = new RecentBookingsAdapter(
+                                                getContext(), bookingList);
+                                        recentBookingsList.setAdapter(adapterNew);
+                                        break;
+                                    }
                                 }
+                            } catch (NumberFormatException e) {
+                                Toast.makeText(getApplicationContext(),
+                                        "Booking ID is not valid", Toast.LENGTH_LONG).show();
                             }
-                        }
-                        else if(numOfWords == 3) {
+                        } else if (numOfWords == 3) {
                             String theID = finishBooking(speechText);
-                            if(theID.contains("id")){
-                                 theID = theID.replace("id", "");
-                            }
-                            int id = Integer.parseInt(theID);
-                            for(Booking b: bookingList){
-                                if(b.getID() == id){
-                                    removeBooking(Integer.toString(id), b.getName(),
-                                            b.getSiteLocation(), b.getLocation());
-                                }
-                            }
-                        }
-                        else if(numOfWords == 2) {
-                            String theID = finishBookingTest(speechText);
-                            if(theID.contains("id")){
+                            if (theID.contains("id")) {
                                 theID = theID.replace("id", "");
                             }
-                            int id = Integer.parseInt(theID);
-                            for(Booking b: bookingList){
-                                if(b.getID() == id){
-                                    removeBooking(Integer.toString(id), b.getName(),
-                                            b.getSiteLocation(), b.getLocation());
-                                    bookingList.remove(b);
-                                    RecentBookingsAdapter adapterNew = new RecentBookingsAdapter(
-                                            getContext(), bookingList);
-                                    recentBookingsList.setAdapter(adapterNew);
-                                    break;
+                            try {
+                                int id = Integer.parseInt(theID);
+                                for (Booking b : bookingList) {
+                                    if (b.getID() == id) {
+                                        removeBooking(Integer.toString(id), b.getName(),
+                                                b.getSiteLocation(), b.getLocation());
+                                        bookingList.remove(b);
+                                        RecentBookingsAdapter adapterNew = new RecentBookingsAdapter(
+                                                getContext(), bookingList);
+                                        recentBookingsList.setAdapter(adapterNew);
+                                        break;
+                                    }
                                 }
+                            } catch (NumberFormatException e) {
+                                Toast.makeText(getApplicationContext(),
+                                        "Booking ID is not valid", Toast.LENGTH_LONG).show();
+                            }
+                        } else if (numOfWords == 2) {
+                            String theID = finishBookingTest(speechText);
+                            if (theID.contains("id")) {
+                                theID = theID.replace("id", "");
+                            }
+                            try {
+                                int id = Integer.parseInt(theID);
+                                for (Booking b : bookingList) {
+                                    if (b.getID() == id) {
+                                        removeBooking(Integer.toString(id), b.getName(),
+                                                b.getSiteLocation(), b.getLocation());
+                                        bookingList.remove(b);
+                                        RecentBookingsAdapter adapterNew = new RecentBookingsAdapter(
+                                                getContext(), bookingList);
+                                        recentBookingsList.setAdapter(adapterNew);
+                                        break;
+                                    }
+                                }
+                            } catch (NumberFormatException e) {
+                                Toast.makeText(getApplicationContext(),
+                                        "Booking ID is not valid", Toast.LENGTH_LONG).show();
                             }
                         }
-                    }
-                    else if (speechText.contains("out") ||
+                    } else if (speechText.contains("out") ||
                             speechText.contains("log") ||
-                            speechText.contains("sign")){
+                            speechText.contains("sign")) {
                         logoutUser();
                     }
                 }
@@ -417,7 +454,7 @@ public class HomescreenActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                if (valid == true) {
+                if (valid) {
                     c.StopTick();
                     Intent intent = new Intent(HomescreenActivity.this, AlarmActivity.class);
                     intent.putExtra("name", name);
@@ -451,6 +488,7 @@ public class HomescreenActivity extends AppCompatActivity {
                 return params;
             }
         };
+        strReq.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
@@ -522,6 +560,8 @@ public class HomescreenActivity extends AppCompatActivity {
                 return params;
             }
         };
+        strReq.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
@@ -578,6 +618,8 @@ public class HomescreenActivity extends AppCompatActivity {
                 return params;
             }
         };
+        strReq.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
@@ -638,6 +680,8 @@ public class HomescreenActivity extends AppCompatActivity {
                 return params;
             }
         };
+        strReq.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
