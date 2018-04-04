@@ -79,7 +79,7 @@ public class Clock {
         this.IntentReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                Tick(60000);
+                Tick(5000);
 
             }
         };

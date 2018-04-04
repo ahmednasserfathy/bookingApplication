@@ -78,49 +78,17 @@ public class HomescreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_homescreen);
 
+        bookingList = new ArrayList<>();
         btnLogout = findViewById(R.id.btnLogout);
         recentBookingsList = findViewById(R.id.currentBookingsList);
         btnCreateBooking = findViewById(R.id.btnCreatebooking);
         ImageButton banShowResources = findViewById(R.id.banShowResources);
         recentBookingsList.setEmptyView(findViewById(R.id.empty));
-        TextView timeView = findViewById(R.id.timeView);
+        final TextView timeView = findViewById(R.id.timeView);
 
         // Progress dialog
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
-
-        c = new Clock(this);
-        c.AddClockTickListner(new OnClockTickListner() {
-            @Override
-            public void OnMinuteTick(Time currentTime) {
-
-                for (Booking booking : bookingList) {
-                    if (booking.getStatus().equals("Upcoming")
-                            && !isValidBookDate(booking.getDateBooked())) {
-                        booking.setStatus("In progress");
-                        updateBookingStatus("In progress", booking.getName(),
-                                booking.getSiteLocation(), booking.getLocation());
-                        new AlertDialog.Builder(getContext())
-                                .setTitle("Booking initiated!")
-                                .setMessage("Your booking: " + booking.getName() + " at "
-                                        + booking.getSiteLocation() + ", "
-                                        + booking.getLocation() + " has started")
-                                .setIcon(android.R.drawable.ic_dialog_alert)
-                                .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int whichButton) {
-                                        RecentBookingsAdapter adapter = new RecentBookingsAdapter(getContext(), bookingList);
-                                        recentBookingsList.setAdapter(adapter);
-                                    }
-                                }).show();
-                    }
-                }
-            }
-        });
-
-        Date d = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
-        String currentDateTimeString = sdf.format(d);
-        timeView.setText(currentDateTimeString);
 
         // SqLite database handler
         db = new SQLiteHandler(getApplicationContext());
@@ -145,10 +113,42 @@ public class HomescreenActivity extends AppCompatActivity {
                 sentLocation = extras.getString("sentLocation");
                 removeBooking(sentID, sentName, sentSiteLocation, sentLocation);
             }
+        }else{
+            getAllBookings(userID);
         }
 
-        bookingList = new ArrayList<>();
-        getAllBookings(userID);
+        c = new Clock(this);
+        c.AddClockTickListner(new OnClockTickListner() {
+            @Override
+            public void OnMinuteTick(Time currentTime) {
+
+                Date d = new Date();
+                SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
+                String currentDateTimeString = sdf.format(d);
+                timeView.setText(currentDateTimeString);
+
+                for (Booking booking : bookingList) {
+                    if (booking.getStatus().equals("Upcoming")
+                            && !isValidBookDate(booking.getDateBooked())) {
+                        booking.setStatus("In progress");
+                        updateBookingStatus("In progress", booking.getName(),
+                                booking.getSiteLocation(), booking.getLocation());
+                        new AlertDialog.Builder(getContext())
+                                .setTitle("Booking initiated!")
+                                .setMessage("Your booking: " + booking.getName() + " at "
+                                        + booking.getSiteLocation() + ", "
+                                        + booking.getLocation() + " has started")
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int whichButton) {
+                                        RecentBookingsAdapter adapter = new RecentBookingsAdapter(getContext(), bookingList);
+                                        recentBookingsList.setAdapter(adapter);
+                                    }
+                                }).show();
+                    }
+                }
+            }
+        });
 
         // Create new booking
         btnCreateBooking.setOnClickListener(new View.OnClickListener() {
@@ -244,6 +244,7 @@ public class HomescreenActivity extends AppCompatActivity {
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     speechText = result.get(0);
+                    speechText = "reserve room 1 on the 5th of april at 10:34 p.m. in Library level 1";
                     Log.d(TAG, "Speech input: " + speechText);
 
 
@@ -296,12 +297,9 @@ public class HomescreenActivity extends AppCompatActivity {
                                 int id = Integer.parseInt(theID);
                                 for (Booking b : bookingList) {
                                     if (b.getID() == id) {
+                                        bookingList.remove(b);
                                         removeBooking(Integer.toString(id), b.getName(),
                                                 b.getSiteLocation(), b.getLocation());
-                                        bookingList.remove(b);
-                                        RecentBookingsAdapter adapterNew = new RecentBookingsAdapter(
-                                                getContext(), bookingList);
-                                        recentBookingsList.setAdapter(adapterNew);
                                         break;
                                     }
                                 }
@@ -318,12 +316,9 @@ public class HomescreenActivity extends AppCompatActivity {
                                 int id = Integer.parseInt(theID);
                                 for (Booking b : bookingList) {
                                     if (b.getID() == id) {
+                                        bookingList.remove(b);
                                         removeBooking(Integer.toString(id), b.getName(),
                                                 b.getSiteLocation(), b.getLocation());
-                                        bookingList.remove(b);
-                                        RecentBookingsAdapter adapterNew = new RecentBookingsAdapter(
-                                                getContext(), bookingList);
-                                        recentBookingsList.setAdapter(adapterNew);
                                         break;
                                     }
                                 }
@@ -340,12 +335,9 @@ public class HomescreenActivity extends AppCompatActivity {
                                 int id = Integer.parseInt(theID);
                                 for (Booking b : bookingList) {
                                     if (b.getID() == id) {
+                                        bookingList.remove(b);
                                         removeBooking(Integer.toString(id), b.getName(),
                                                 b.getSiteLocation(), b.getLocation());
-                                        bookingList.remove(b);
-                                        RecentBookingsAdapter adapterNew = new RecentBookingsAdapter(
-                                                getContext(), bookingList);
-                                        recentBookingsList.setAdapter(adapterNew);
                                         break;
                                     }
                                 }
@@ -658,6 +650,7 @@ public class HomescreenActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                getAllBookings(userID);
             }
         }, new Response.ErrorListener() {
 

@@ -13,7 +13,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cf89f21-85ce-4982-8bc4-7b3dc052cbec" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/text_border.xml" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
@@ -23,73 +22,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/compat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/compat/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreui/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreui/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreutils/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreutils/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/fragment/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/fragment/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/graphics/drawable/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/graphics/drawable/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/graphics/drawable/animated/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/graphics/drawable/animated/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/mediacompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/mediacompat/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/transition/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/transition/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v4/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v4/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/info/androidhive/bookingApplication/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/info/androidhive/bookingApplication/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/values.json" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/compat/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/compat/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/coreui/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/coreui/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/coreutils/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/coreutils/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$drawable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/fragment/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/fragment/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/graphics/drawable/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/graphics/drawable/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/graphics/drawable/animated/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/graphics/drawable/animated/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/mediacompat/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/mediacompat/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/transition/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/transition/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v4/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v4/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$drawable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$drawable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$integer.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$layout.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$string.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$style.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/R$styleable.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$3.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$4.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$5.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$6.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/LoginActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/LoginActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/RegisterActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/RegisterActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/ShowResourcesActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/ShowResourcesActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/helper/RecentBookingsAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/helper/RecentBookingsAdapter.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/helper/ResourcesAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/helper/ResourcesAdapter.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/app/AppConfig.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/app/AppConfig.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/debug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/debug/dex-renamer-state.txt" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/debug/zip-cache/UZ8Q3Tc_Fuf9bAtyBvBhKHn1HdI=" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/debug/zip-cache/UZ8Q3Tc_Fuf9bAtyBvBhKHn1HdI=" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_layout_homescreen.xml.flat" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_layout_homescreen.xml.flat" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values_values.arsc.flat" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values_values.arsc.flat" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/__content__.json" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/__content__.json" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/externalLibsDexMerger/debug/0/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/externalLibsDexMerger/debug/0/classes.dex" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/BookingActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/BookingActivity.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_homescreen.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_homescreen.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_single_booking.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_single_booking.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppConfig.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppConfig.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Clock.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Clock.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -128,10 +69,12 @@
       <file leaf-file-name="HomescreenActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="245" column="47" lean-forward="false" selection-start-line="245" selection-start-column="47" selection-end-line="245" selection-end-column="47" />
+            <state relative-caret-position="63">
+              <caret line="358" column="0" lean-forward="true" selection-start-line="358" selection-start-column="0" selection-end-line="358" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4836#6585#0" expanded="true" />
+                <element signature="e#6584#6585#0" expanded="true" />
                 <element signature="docComment;method#logoutUser#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="method#logoutUser#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="docComment;method#askSpeechInput#0;class#HomescreenActivity#0" expanded="false" />
@@ -140,18 +83,18 @@
                 <element signature="docComment;method#isValidBookDate#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="method#isValidBookDate#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="docComment;method#createNewBooking#0;class#HomescreenActivity#0" expanded="false" />
-                <element signature="class#18696:21719" expanded="false" />
-                <element signature="method#getParams#0;class#18696:21719" expanded="false" />
+                <element signature="class#18073:21096" expanded="false" />
+                <element signature="method#getParams#0;class#18073:21096" expanded="false" />
                 <element signature="docComment;method#getAllBookings#0;class#HomescreenActivity#0" expanded="false" />
-                <element signature="class#22353:24727" expanded="false" />
-                <element signature="method#getParams#0;class#22353:24727" expanded="false" />
+                <element signature="class#21730:24104" expanded="false" />
+                <element signature="method#getParams#0;class#21730:24104" expanded="false" />
                 <element signature="method#updateBookingStatus#0;class#HomescreenActivity#0" expanded="false" />
-                <element signature="class#25261:27239" expanded="false" />
-                <element signature="method#getParams#0;class#25261:27239" expanded="false" />
-                <element signature="class#27861:29842" expanded="false" />
-                <element signature="method#getParams#0;class#27861:29842" expanded="false" />
-                <element signature="e#30146#30147#0" expanded="true" />
-                <element signature="e#30173#30174#0" expanded="true" />
+                <element signature="class#24638:26616" expanded="false" />
+                <element signature="method#getParams#0;class#24638:26616" expanded="false" />
+                <element signature="class#27238:29259" expanded="false" />
+                <element signature="method#getParams#0;class#27238:29259" expanded="false" />
+                <element signature="e#29563#29564#0" expanded="true" />
+                <element signature="e#29590#29591#0" expanded="true" />
                 <element signature="method#onKeyDown#0;class#HomescreenActivity#0" expanded="false" />
               </folding>
             </state>
@@ -172,7 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>putext</find>
       <find>time</find>
       <find>Locale</find>
       <find>valid</find>
@@ -197,11 +139,12 @@
       <find>cancelBooking</find>
       <find>log</find>
       <find>TAG</find>
-      <find>getAllBookings</find>
-      <find>removeBooking</find>
       <find>bookingList''</find>
       <find>removeboo</find>
+      <find>cache</find>
       <find>removebook</find>
+      <find>removeBooking</find>
+      <find>getAllBookings</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2082,7 +2025,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Booking.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/RecentBookingsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_bookings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppConfig.java" />
         <option value="C:/xampp/htdocs/android_login_api/include/DB_Functions.php" />
         <option value="C:/xampp/htdocs/android_login_api/removebooking.php" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/SpeechPatterns.java" />
@@ -2092,6 +2034,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_homescreen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_single_booking.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/BookingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppConfig.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Clock.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java" />
       </list>
     </option>
@@ -2455,7 +2399,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522772185682</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Database tweaks after some extensive testing">
+      <created>1522800390845</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1522800390845</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2511,7 +2462,8 @@
     <MESSAGE value="Added ability to set up multiple alarms, UI tweaks" />
     <MESSAGE value="Added ability cancel/finish bookings" />
     <MESSAGE value="Added single booking view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added single booking view" />
+    <MESSAGE value="Database tweaks after some extensive testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Database tweaks after some extensive testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2520,7 +2472,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/SetReminderActivity.java" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.45432/android-mt-tutorials/tags/SuperSimpleDialogs-1/src/com/mamlambo/supersimpledialogs/SuperSimpleDialogsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2731,14 +2682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Clock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="87" column="37" lean-forward="false" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/xampp/htdocs/android_login_api/getbookings.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3">
@@ -2759,14 +2702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="53" column="62" lean-forward="false" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="43" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -2828,14 +2763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
           <caret line="94" column="4" lean-forward="true" selection-start-line="94" selection-start-column="4" selection-end-line="103" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -2997,12 +2924,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.volley/library-aar/1.0.0/a06dc87d645fa920c025d4bdb42cab1c7d4cdd73/library-aar-1.0.0-sources.jar!/com/android/volley/toolbox/Volley.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="64" column="64" lean-forward="false" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="87" lean-forward="false" selection-start-line="4" selection-start-column="87" selection-end-line="4" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Clock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="84" column="10" lean-forward="true" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
+          <folding>
+            <element signature="e#2169#2337#0" expanded="false" />
+            <element signature="e#2336#2337#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="35" column="14" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="245" column="47" lean-forward="false" selection-start-line="245" selection-start-column="47" selection-end-line="245" selection-end-column="47" />
+        <state relative-caret-position="63">
+          <caret line="358" column="0" lean-forward="true" selection-start-line="358" selection-start-column="0" selection-end-line="358" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4836#6585#0" expanded="true" />
+            <element signature="e#6584#6585#0" expanded="true" />
             <element signature="docComment;method#logoutUser#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="method#logoutUser#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="docComment;method#askSpeechInput#0;class#HomescreenActivity#0" expanded="false" />
@@ -3011,18 +2975,18 @@
             <element signature="docComment;method#isValidBookDate#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="method#isValidBookDate#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="docComment;method#createNewBooking#0;class#HomescreenActivity#0" expanded="false" />
-            <element signature="class#18696:21719" expanded="false" />
-            <element signature="method#getParams#0;class#18696:21719" expanded="false" />
+            <element signature="class#18073:21096" expanded="false" />
+            <element signature="method#getParams#0;class#18073:21096" expanded="false" />
             <element signature="docComment;method#getAllBookings#0;class#HomescreenActivity#0" expanded="false" />
-            <element signature="class#22353:24727" expanded="false" />
-            <element signature="method#getParams#0;class#22353:24727" expanded="false" />
+            <element signature="class#21730:24104" expanded="false" />
+            <element signature="method#getParams#0;class#21730:24104" expanded="false" />
             <element signature="method#updateBookingStatus#0;class#HomescreenActivity#0" expanded="false" />
-            <element signature="class#25261:27239" expanded="false" />
-            <element signature="method#getParams#0;class#25261:27239" expanded="false" />
-            <element signature="class#27861:29842" expanded="false" />
-            <element signature="method#getParams#0;class#27861:29842" expanded="false" />
-            <element signature="e#30146#30147#0" expanded="true" />
-            <element signature="e#30173#30174#0" expanded="true" />
+            <element signature="class#24638:26616" expanded="false" />
+            <element signature="method#getParams#0;class#24638:26616" expanded="false" />
+            <element signature="class#27238:29259" expanded="false" />
+            <element signature="method#getParams#0;class#27238:29259" expanded="false" />
+            <element signature="e#29563#29564#0" expanded="true" />
+            <element signature="e#29590#29591#0" expanded="true" />
             <element signature="method#onKeyDown#0;class#HomescreenActivity#0" expanded="false" />
           </folding>
         </state>
