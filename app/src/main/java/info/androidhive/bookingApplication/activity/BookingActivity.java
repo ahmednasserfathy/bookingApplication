@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import info.androidhive.bookingApplication.R;
+import info.androidhive.bookingApplication.helper.Booking;
 
 public class BookingActivity extends Activity {
 
@@ -84,6 +85,14 @@ public class BookingActivity extends Activity {
         intent.putExtra("sentSiteLocation", sentSiteLocation);
         intent.putExtra("sentLocation", sentLocation);
         intent.putExtra("condition", "cancelBooking");
+        startActivity(intent);
+        finish();
+    }
+    public void addReminder(View v){
+        Intent intent = new Intent(BookingActivity.this, AlarmActivity.class);
+        intent.putExtra("name", sentName);
+        intent.putExtra("siteLocation", sentSiteLocation);
+        intent.putExtra("location", sentLocation);
         startActivity(intent);
         finish();
     }

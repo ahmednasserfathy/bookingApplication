@@ -13,6 +13,7 @@ import java.util.List;
 
 public class Clock {
     public static final int TICKPERMINUTE = 1;
+    public static final int TICKPERSECOND=0;
     Context Context;
     private Time Time;
     private Handler Handler;
@@ -36,10 +37,6 @@ public class Clock {
             case 0:
                 this.StartTickPerSecond();
                 break;
-            case 1:
-                this.StartTickPerMinute();
-                break;
-
             default:
                 break;
         }
@@ -52,9 +49,10 @@ public class Clock {
 
     private void NotifyOnTickListners() {
         switch (TickMethod) {
-            case 1:
-                for (OnClockTickListner listner : OnClockTickListenerList) {
-                    listner.OnMinuteTick(Time);
+            case 0:
+                for(OnClockTickListner listner:OnClockTickListenerList)
+                {
+                    listner.OnSecondTick(Time);
                 }
                 break;
         }
@@ -72,20 +70,6 @@ public class Clock {
             }
         };
         this.Ticker.run();
-
-    }
-
-    private void StartTickPerMinute() {
-        this.IntentReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                Tick(5000);
-
-            }
-        };
-        this.IntentFilter = new IntentFilter();
-        this.IntentFilter.addAction(Intent.ACTION_TIME_TICK);
-        this.Context.registerReceiver(this.IntentReceiver, this.IntentFilter, null, this.Handler);
 
     }
 

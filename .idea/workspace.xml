@@ -25,12 +25,13 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity$6.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/activity/HomescreenActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/app/AppConfig.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/info/androidhive/bookingApplication/app/AppConfig.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/debug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/debug/dex-renamer-state.txt" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/BookingActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/BookingActivity.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppConfig.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppConfig.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Clock.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Clock.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/OnClockTickListner.java" afterPath="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/OnClockTickListner.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,32 +70,29 @@
       <file leaf-file-name="HomescreenActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="358" column="0" lean-forward="true" selection-start-line="358" selection-start-column="0" selection-end-line="358" selection-end-column="0" />
+            <state relative-caret-position="295">
+              <caret line="130" column="62" lean-forward="true" selection-start-line="130" selection-start-column="62" selection-end-line="130" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4836#6585#0" expanded="true" />
-                <element signature="e#6584#6585#0" expanded="true" />
                 <element signature="docComment;method#logoutUser#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="method#logoutUser#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="docComment;method#askSpeechInput#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="method#askSpeechInput#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="docComment;method#onActivityResult#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="docComment;method#isValidBookDate#0;class#HomescreenActivity#0" expanded="false" />
-                <element signature="method#isValidBookDate#0;class#HomescreenActivity#0" expanded="false" />
                 <element signature="docComment;method#createNewBooking#0;class#HomescreenActivity#0" expanded="false" />
-                <element signature="class#18073:21096" expanded="false" />
-                <element signature="method#getParams#0;class#18073:21096" expanded="false" />
+                <element signature="class#17972:20995" expanded="false" />
+                <element signature="method#getParams#0;class#17972:20995" expanded="false" />
                 <element signature="docComment;method#getAllBookings#0;class#HomescreenActivity#0" expanded="false" />
-                <element signature="class#21730:24104" expanded="false" />
-                <element signature="method#getParams#0;class#21730:24104" expanded="false" />
+                <element signature="class#21629:24003" expanded="false" />
+                <element signature="method#getParams#0;class#21629:24003" expanded="false" />
                 <element signature="method#updateBookingStatus#0;class#HomescreenActivity#0" expanded="false" />
-                <element signature="class#24638:26616" expanded="false" />
-                <element signature="method#getParams#0;class#24638:26616" expanded="false" />
-                <element signature="class#27238:29259" expanded="false" />
-                <element signature="method#getParams#0;class#27238:29259" expanded="false" />
-                <element signature="e#29563#29564#0" expanded="true" />
-                <element signature="e#29590#29591#0" expanded="true" />
+                <element signature="class#24537:26515" expanded="false" />
+                <element signature="method#getParams#0;class#24537:26515" expanded="false" />
+                <element signature="class#27137:29158" expanded="false" />
+                <element signature="method#getParams#0;class#27137:29158" expanded="false" />
+                <element signature="e#29462#29463#0" expanded="true" />
+                <element signature="e#29489#29490#0" expanded="true" />
                 <element signature="method#onKeyDown#0;class#HomescreenActivity#0" expanded="false" />
               </folding>
             </state>
@@ -115,9 +113,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>time</find>
-      <find>Locale</find>
-      <find>valid</find>
       <find>create</find>
       <find>invalidbook</find>
       <find>finish</find>
@@ -145,6 +140,9 @@
       <find>removebook</find>
       <find>removeBooking</find>
       <find>getAllBookings</find>
+      <find>createbooking</find>
+      <find>createnewbook</find>
+      <find>StartTickPer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2033,8 +2031,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_login.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_homescreen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_single_booking.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/BookingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppConfig.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/BookingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/OnClockTickListner.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Clock.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java" />
       </list>
@@ -2062,6 +2061,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="bookingApplication" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -2167,17 +2177,6 @@
       </pane>
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="bookingApplication" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2406,7 +2405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522800390845</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Database tweaks after some extensive testing">
+      <created>1522810676018</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1522810676018</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2430,8 +2436,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.50323623" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23300971" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33410406" sideWeight="0.49676377" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2439,19 +2445,19 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17718446" sideWeight="0.49310344" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.50689656" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.50689656" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2467,67 +2473,27 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/OnClockTickListner.java</url>
+          <line>6</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.45432/android-mt-tutorials/tags/SuperSimpleDialogs-1/src/com/mamlambo/supersimpledialogs/SuperSimpleDialogsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.48012/android-mt-tutorials/tags/SuperSimpleDialogs-1/res/layout/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.49745/android-mt-tutorials/tags/SuperSimpleDialogs-2/res/layout/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.5089/android-mt-tutorials/tags/EasyGridLayout-1/res/layout/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1122">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.14271/android-mt-tutorials/trunk/SuperSimpleDialogs/src/com/mamlambo/supersimpledialogs/SuperSimpleDialogsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.6587/android-mt-tutorials/trunk/SuperSimpleDialogs/res/layout/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="59" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="28" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.21631/android-mt-tutorials/tags/SuperSimpleDialogs-2/res/layout/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.18432/android-mt-tutorials/tags/SuperSimpleDialogs-2/src/com/mamlambo/supersimpledialogs/SuperSimpleDialogsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="134" column="62" lean-forward="false" selection-start-line="134" selection-start-column="62" selection-end-line="134" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.45432/android-mt-tutorials/tags/SuperSimpleDialogs-1/src/com/mamlambo/supersimpledialogs/SuperSimpleDialogsActivity.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.48012/android-mt-tutorials/tags/SuperSimpleDialogs-1/res/layout/main.xml" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.49745/android-mt-tutorials/tags/SuperSimpleDialogs-2/res/layout/main.xml" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.5089/android-mt-tutorials/tags/EasyGridLayout-1/res/layout/main.xml" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.14271/android-mt-tutorials/trunk/SuperSimpleDialogs/src/com/mamlambo/supersimpledialogs/SuperSimpleDialogsActivity.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.6587/android-mt-tutorials/trunk/SuperSimpleDialogs/res/layout/main.xml" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.21631/android-mt-tutorials/tags/SuperSimpleDialogs-2/res/layout/main.xml" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa6220.18432/android-mt-tutorials/tags/SuperSimpleDialogs-2/src/com/mamlambo/supersimpledialogs/SuperSimpleDialogsActivity.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -2542,17 +2508,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ripple_effect.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ripple_effect.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/bg.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -2566,17 +2522,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_number_picker.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_number_picker.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -2603,19 +2549,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/OnClockTickListner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/xampp/htdocs/android_login_api/db/database.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2623,54 +2560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding>
-            <marker date="1510272255380" expanded="false" signature="3:117" ph="/.../" />
-            <marker date="1510272255380" expanded="true" signature="236:259" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="307:330" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="415:438" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="515:538" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="648:671" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="697:720" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="825:848" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="952:975" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="1076:1099" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="1201:1224" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="1338:1361" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="1478:1501" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="1622:1645" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="1705:1728" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="1779:1802" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="1850:1873" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="1960:1983" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="2040:2063" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="2148:2171" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="2226:2249" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="2322:2345" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="2428:2451" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="2504:2527" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="2597:2620" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="2697:2720" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="2767:2790" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="2851:2874" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="2953:2976" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="3025:3048" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="3112:3135" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="3228:3251" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="3314:3337" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="3427:3450" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="3548:3571" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="3639:3662" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="3762:3785" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="3855:3878" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="3978:4001" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="4058:4081" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="4121:4144" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="4185:4208" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="4295:4318" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="4425:4448" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="4514:4537" ph="{}" />
-            <marker date="1510272255380" expanded="true" signature="4599:4622" ph="{}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2686,7 +2575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3">
           <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2710,7 +2598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2718,7 +2605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="33" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="20" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2726,7 +2612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2734,7 +2619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="176" column="7" lean-forward="true" selection-start-line="176" selection-start-column="7" selection-end-line="176" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2744,19 +2628,6 @@
           <caret line="290" column="0" lean-forward="false" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="59" column="45" lean-forward="true" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
-          <folding>
-            <element signature="e#2589#2607#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/ShowResourcesActivity.java">
@@ -2789,14 +2660,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/button_style.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/button_style.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_login.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
@@ -2905,30 +2769,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_single_booking.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="144" column="41" lean-forward="false" selection-start-line="144" selection-start-column="41" selection-end-line="144" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/BookingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="41" column="22" lean-forward="false" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.volley/library-aar/1.0.0/a06dc87d645fa920c025d4bdb42cab1c7d4cdd73/library-aar-1.0.0-sources.jar!/com/android/volley/toolbox/Volley.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
           <caret line="64" column="64" lean-forward="false" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2940,17 +2784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Clock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="84" column="10" lean-forward="true" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
-          <folding>
-            <element signature="e#2169#2337#0" expanded="false" />
-            <element signature="e#2336#2337#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/app/AppController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -2959,34 +2792,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/BookingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="59" column="45" lean-forward="true" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/OnClockTickListner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/helper/Clock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="84" column="30" lean-forward="false" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_single_booking.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="151" column="40" lean-forward="false" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/info/androidhive/bookingApplication/activity/HomescreenActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="358" column="0" lean-forward="true" selection-start-line="358" selection-start-column="0" selection-end-line="358" selection-end-column="0" />
+        <state relative-caret-position="295">
+          <caret line="130" column="62" lean-forward="true" selection-start-line="130" selection-start-column="62" selection-end-line="130" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4836#6585#0" expanded="true" />
-            <element signature="e#6584#6585#0" expanded="true" />
             <element signature="docComment;method#logoutUser#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="method#logoutUser#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="docComment;method#askSpeechInput#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="method#askSpeechInput#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="docComment;method#onActivityResult#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="docComment;method#isValidBookDate#0;class#HomescreenActivity#0" expanded="false" />
-            <element signature="method#isValidBookDate#0;class#HomescreenActivity#0" expanded="false" />
             <element signature="docComment;method#createNewBooking#0;class#HomescreenActivity#0" expanded="false" />
-            <element signature="class#18073:21096" expanded="false" />
-            <element signature="method#getParams#0;class#18073:21096" expanded="false" />
+            <element signature="class#17972:20995" expanded="false" />
+            <element signature="method#getParams#0;class#17972:20995" expanded="false" />
             <element signature="docComment;method#getAllBookings#0;class#HomescreenActivity#0" expanded="false" />
-            <element signature="class#21730:24104" expanded="false" />
-            <element signature="method#getParams#0;class#21730:24104" expanded="false" />
+            <element signature="class#21629:24003" expanded="false" />
+            <element signature="method#getParams#0;class#21629:24003" expanded="false" />
             <element signature="method#updateBookingStatus#0;class#HomescreenActivity#0" expanded="false" />
-            <element signature="class#24638:26616" expanded="false" />
-            <element signature="method#getParams#0;class#24638:26616" expanded="false" />
-            <element signature="class#27238:29259" expanded="false" />
-            <element signature="method#getParams#0;class#27238:29259" expanded="false" />
-            <element signature="e#29563#29564#0" expanded="true" />
-            <element signature="e#29590#29591#0" expanded="true" />
+            <element signature="class#24537:26515" expanded="false" />
+            <element signature="method#getParams#0;class#24537:26515" expanded="false" />
+            <element signature="class#27137:29158" expanded="false" />
+            <element signature="method#getParams#0;class#27137:29158" expanded="false" />
+            <element signature="e#29462#29463#0" expanded="true" />
+            <element signature="e#29489#29490#0" expanded="true" />
             <element signature="method#onKeyDown#0;class#HomescreenActivity#0" expanded="false" />
           </folding>
         </state>

@@ -117,10 +117,10 @@ public class HomescreenActivity extends AppCompatActivity {
             getAllBookings(userID);
         }
 
-        c = new Clock(this);
+        c = new Clock(this, 0);
         c.AddClockTickListner(new OnClockTickListner() {
             @Override
-            public void OnMinuteTick(Time currentTime) {
+            public void OnSecondTick(Time currentTime) {
 
                 Date d = new Date();
                 SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
@@ -244,7 +244,6 @@ public class HomescreenActivity extends AppCompatActivity {
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     speechText = result.get(0);
-                    speechText = "reserve room 1 on the 5th of april at 10:34 p.m. in Library level 1";
                     Log.d(TAG, "Speech input: " + speechText);
 
 
